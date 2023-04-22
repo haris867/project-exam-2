@@ -9,7 +9,10 @@ import GlobalStyle from "./styles/GlobalStyles";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Theme>
+      <GlobalStyle />
+      <App />
+    </Theme>
   </React.StrictMode>
 );
 
