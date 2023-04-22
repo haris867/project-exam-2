@@ -1,19 +1,20 @@
 import React from "react";
-import styled from "styled-components";
-
-const Button = styled.button`
-  padding: 10px 20px;
-  color: ${(props) => props.theme.color.primary};
-  background: ${(props) => props.theme.color.secondary};
-  border-radius: 6px;
-  border: solid 2px ${(props) => props.theme.color.tertiary}};
-  cursor: pointer;
-`;
+import { Routes, Route } from "react-router-dom";
+import Nav from "./components/nav";
+import Layout from "./components/layout";
+import { About, Home, Venues } from "./pages";
 
 function App() {
   return (
     <div>
-      <Button>Click me</Button>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/venues" element={<Venues />} />
+          <Route path="/about" element={<About />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
