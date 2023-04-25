@@ -1,13 +1,12 @@
 import React from "react";
+import "./styles/scss/styles.scss";
 import { Routes, Route } from "react-router-dom";
-import Nav from "./components/nav";
 import Layout from "./components/layout";
 import { About, Home, Venues } from "./pages";
 
 function App() {
   return (
     <div>
-      <Nav />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

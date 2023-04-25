@@ -1,5 +1,9 @@
 function Footer() {
-  return <footer>HOLIDAZE footer</footer>;
+  return (
+    <footer>
+      <div className="footer-content">HOLIDAZE footer</div>
+    </footer>
+  );
 }
 
 export default Footer;

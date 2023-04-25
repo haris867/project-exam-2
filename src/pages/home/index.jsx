@@ -12,7 +12,7 @@ const Button = styled.button`
 
 export default function Home() {
   return (
-    <div>
+    <div style={{ flex: "1" }}>
       <Button>Click me</Button>
     </div>
   );
