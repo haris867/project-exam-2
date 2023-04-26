@@ -28,7 +28,7 @@ header a:hover {
 nav {
   position: absolute;
   right: -40px;
-  top: 25px;
+  top: 15px;
   font-size: 1.4em;
   font-family: "Roboto", sans-serif;
   z-index: 1;
@@ -68,21 +68,18 @@ li {
   -webkit-text-stroke: 2px var(--color-primary);
 }
 
-.logo-container img {
-  position: absolute;
-  top: 25px;
-  width: 70px;
-  left: 78px;
-}
-
 header {
   width: 85%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 140px;
+  height: 120px;
   border-bottom: solid 2px var(--color-primary);
+}
+
+.logo-container svg {
+  width: 170px;
 }
 
 footer {
@@ -92,6 +89,9 @@ footer {
   height: 140px;
   color: white;
   background-color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-content {
