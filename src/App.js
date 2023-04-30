@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/scss/styles.scss";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/layout";
-import { About, Home, Venues } from "./pages";
+import { About, Home, Venues, Login } from "./pages";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/venues" element={<Venues />} />
           <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
         </Route>
       </Routes>
     </div>

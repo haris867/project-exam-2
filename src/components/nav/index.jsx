@@ -32,17 +32,44 @@ export default function Nav() {
         <nav id="collapse-nav">
           <ul>
             <li>
-              <NavLink to="/">HOME</NavLink>
+              <NavLink
+                to="/"
+                onClick={() => setOpen(!open)}
+                aria-controls="collapse-nav"
+                aria-expanded={open}
+              >
+                HOME
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/venues">VENUES</NavLink>
+              <NavLink
+                to="/venues"
+                onClick={() => setOpen(!open)}
+                aria-controls="collapse-nav"
+                aria-expanded={open}
+              >
+                VENUES
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/about">ABOUT</NavLink>
+              <NavLink
+                to="/about"
+                onClick={() => setOpen(!open)}
+                aria-controls="collapse-nav"
+                aria-expanded={open}
+              >
+                ABOUT
+              </NavLink>
             </li>
           </ul>
-          <NavLink className={"login"} to="/">
-            <LogInButton>LOG IN</LogInButton>
+          <NavLink className={"login"} to="/login">
+            <LogInButton
+              onClick={() => setOpen(!open)}
+              aria-controls="collapse-nav"
+              aria-expanded={open}
+            >
+              LOG IN
+            </LogInButton>
           </NavLink>
         </nav>
       </Collapse>
