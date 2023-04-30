@@ -325,6 +325,10 @@ footer a:hover {
   .about-page .card-text {
     font-size: 1.2em;
   }
+
+  .collapsing {
+    transition: none;
+  }
 }
 
 @media (min-width: 992px) {
