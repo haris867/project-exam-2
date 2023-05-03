@@ -18,7 +18,11 @@ const FormButton = styled.input`
   align-self: center;
 `;
 
-export default function Login() {
+const registerLink = styled.a`
+  color: var(--color-primary);
+`;
+
+export default function Register() {
   const { register, handleSubmit } = useForm();
 
   function onSubmit(data) {
@@ -41,6 +45,22 @@ export default function Login() {
                 className="my-login-modal d-flex flex-column"
                 onSubmit={handleSubmit(onSubmit)}
               >
+                <label htmlFor="">Name</label>
+                <input
+                  type="text"
+                  placeholder="Your full name"
+                  {...register("full-name")}
+                />
+                <div className="sub-label d-flex">
+                  <label htmlFor="">
+                    Avatar <p className="d-inline">(image URL)</p>
+                  </label>
+                </div>
+                <input
+                  type="url"
+                  placeholder="Avatar image URL"
+                  {...register("avatar-url")}
+                />
                 <label htmlFor="">Email</label>
                 <input
                   type="email"
@@ -54,7 +74,11 @@ export default function Login() {
                   placeholder="Your password"
                   {...register("password")}
                 />
-                <FormButton className="mt-3" type="submit" value={"LOG IN"} />
+                <FormButton className="mt-3" type="submit" value={"REGISTER"} />
+                <div>
+                  <p className="mt-3">Not registered?</p>
+                  <p>SIGN UP NOW!</p>
+                </div>
               </form>
             </div>
           </Col>

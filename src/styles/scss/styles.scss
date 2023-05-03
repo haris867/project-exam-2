@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap");
-
 @import "~bootstrap/scss/bootstrap";
+
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 body {
   font-family: "Libre Franklin", sans-serif;
@@ -171,7 +171,7 @@ footer {
 
 .footer-copyright {
   font-family: "Quicksand", sans-serif;
-  font-size: 0.9em;
+  font-size: 1em;
   width: 33.33%;
 }
 
@@ -232,6 +232,40 @@ footer a:hover {
 .about-page .card-text {
   color: var(--color-primary);
   font-family: "Quicksand", sans-serif;
+}
+
+// LOGIN
+
+.my-login-modal {
+  color: var(--color-primary);
+}
+
+.my-login-modal input {
+  margin: 0 20px 10px 20px;
+  outline: none;
+  border: 1px solid var(--color-primary);
+  padding: 2px 2px;
+  font-family: "Quicksand", sans-serif;
+  height: 2em;
+}
+
+.my-login-modal label {
+  font-size: 1.2em;
+  margin: 0 20px;
+}
+
+.sub-label p {
+  font-size: 0.7em;
+}
+
+.form-card {
+  padding: 10px 0;
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+}
+
+form {
+  width: 100%;
 }
 
 @media (min-width: 700px) {
