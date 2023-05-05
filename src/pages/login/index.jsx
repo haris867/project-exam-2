@@ -1,21 +1,13 @@
 import React from "react";
 import { Container, Card, Row, Col } from "react-bootstrap";
-import { Route } from "react-router-dom";
+import { Route, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
+import { LogInButton } from "../../components/nav";
 
 const LoginHeading = styled.h1`
   font-weight: 500;
-  margin-bottom: 0;
-`;
-
-const FormButton = styled.input`
-  color: white;
-  background: var(--color-primary);
-  border: none;
-  border-radius: 3px;
-  width: 70%;
-  align-self: center;
+  margin-bottom: 40px;
 `;
 
 export default function Login() {
@@ -25,41 +17,69 @@ export default function Login() {
     console.log(data);
   }
   return (
-    <div className="about-page">
-      <Container>
-        <Row className="d-flex justify-content-center">
-          <Col
-            className="form-card d-flex justify-content-center"
-            xs={8}
-            md={5}
+    <Container
+      className="d-flex flex-column justify-content-center"
+      style={{ width: "85%", padding: "0" }}
+    >
+      <LoginHeading>Log in</LoginHeading>
+      <Row
+        className="d-flex align-self-center justify-content-center"
+        style={{ width: "100%" }}
+      >
+        <Col
+          className="form-card d-flex justify-content-center"
+          xs={12}
+          sm={8}
+          md={6}
+        >
+          <div
+            className="d-flex justify-content-center"
+            style={{ width: "100%" }}
           >
-            <div
-              className="d-flex justify-content-center"
-              style={{ width: "100%" }}
+            <form
+              className="my-login-modal d-flex flex-column"
+              onSubmit={handleSubmit(onSubmit)}
             >
-              <form
-                className="my-login-modal d-flex flex-column"
-                onSubmit={handleSubmit(onSubmit)}
+              {" "}
+              <label
+                className=" mb-2"
+                htmlFor=""
+                style={{ fontSize: "calc(1.2rem + 0.5vw)" }}
               >
-                <label htmlFor="">Email</label>
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  {...register("email")}
-                />
-                <label htmlFor="">Password</label>
-
-                <input
-                  type="password"
-                  placeholder="Your password"
-                  {...register("password")}
-                />
-                <FormButton className="mt-3" type="submit" value={"LOG IN"} />
-              </form>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+                Email
+              </label>
+              <input
+                type="email"
+                placeholder="Your email"
+                {...register("email")}
+                style={{ height: "calc(2.5em + 0.7vw)" }}
+              />
+              <label
+                className=" mb-2"
+                htmlFor=""
+                style={{ fontSize: "calc(1.2rem + 0.5vw)" }}
+              >
+                Password
+              </label>
+              <input
+                type="password"
+                placeholder="Your password"
+                {...register("password")}
+                style={{ height: "calc(2.5em + 0.7vw)" }}
+              />
+              <LogInButton type="submit" className="mt-3">
+                LOG IN
+              </LogInButton>
+              <NavLink to="/register" className="form-link1 align-self-center">
+                <div>
+                  <p className="mt-3 mb-1">Not registered?</p>
+                  <p>SIGN UP NOW!</p>
+                </div>
+              </NavLink>
+            </form>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }

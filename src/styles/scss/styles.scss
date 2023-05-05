@@ -54,7 +54,6 @@ nav {
   position: absolute;
   right: 25px;
   top: 117px;
-  font-size: 1.4em;
   font-family: "Roboto", sans-serif;
   z-index: 1;
   background: var(--color-secondary);
@@ -244,9 +243,9 @@ footer a:hover {
   margin: 0 20px 10px 20px;
   outline: none;
   border: 1px solid var(--color-primary);
-  padding: 2px 2px;
+  padding: 4px 4px;
   font-family: "Quicksand", sans-serif;
-  height: 2em;
+  height: 2.5em;
 }
 
 .my-login-modal label {
@@ -268,62 +267,17 @@ form {
   width: 100%;
 }
 
+.form-link1 {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.form-link1:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
 @media (min-width: 700px) {
-  .show {
-    display: block;
-  }
-  header {
-    display: flex;
-    justify-content: flex-start;
-  }
-  header a:hover {
-    color: var(--color-primary);
-    text-decoration: var(--color-primary) underline;
-  }
-  .logo-container svg {
-    width: 190px;
-  }
-  header .btn {
-    display: none;
-  }
-
-  nav {
-    display: flex !important;
-    flex: 1;
-    justify-content: space-between;
-    max-width: 80%;
-    align-items: baseline;
-    position: relative;
-    right: 0;
-    top: 0;
-    left: 8%;
-    background-color: var(--color-secondary);
-    border: none;
-  }
-
-  .login {
-    margin-right: 10%;
-  }
-
-  nav a {
-    color: var(--color-primary);
-  }
-
-  nav ul {
-    display: flex;
-    border: none;
-    padding: 0;
-  }
-  .dropdown {
-    display: block;
-  }
-  .dropdown-menu {
-    display: block;
-  }
-  .dropdown-toggle {
-    display: none;
-  }
-
   .card {
     width: 390px;
   }
@@ -389,5 +343,60 @@ form {
   }
   .about-page .card-text {
     font-size: 1.3em;
+  }
+
+  .show {
+    display: block;
+  }
+  header {
+    display: flex;
+    justify-content: flex-start;
+  }
+  header a:hover {
+    color: var(--color-primary);
+    text-decoration: var(--color-primary) underline;
+  }
+  .logo-container svg {
+    width: 190px;
+  }
+  header .btn {
+    display: none;
+  }
+
+  nav {
+    display: flex !important;
+    flex: 1;
+    justify-content: space-between;
+    max-width: 80%;
+    align-items: baseline;
+    position: relative;
+    right: 0;
+    top: 0;
+    left: 8%;
+    background-color: var(--color-secondary);
+    border: none;
+  }
+
+  .login {
+    margin-right: 10%;
+  }
+
+  nav a {
+    color: var(--color-primary);
+  }
+
+  nav ul {
+    display: flex;
+    border: none;
+    padding: 0;
+  }
+  .dropdown {
+    display: block;
+  }
+  .dropdown-menu {
+    display: block;
+  }
+  .dropdown-toggle {
+    display: none;
   }
 }

@@ -5,16 +5,18 @@ import { useState } from "react";
 import Collapse from "react-bootstrap/Collapse";
 import styled from "styled-components";
 
-const LogInButton = styled.button`
+export const LogInButton = styled.button`
   margin-bottom: 10px;
-  border-radius: 7px;
+  border-radius: 4px;
+  border: solid 2px var(--color-tertiary);
   background: var(--color-primary);
   color: white;
-  border: none;
   padding: 4px 18px;
-  font-size: 0.9em;
-  min-width: 100px;
-  min-height: 30px;
+  min-width: calc(160px + 3vw);
+  min-height: 40px;
+  align-self: center;
+  font-size: calc(1rem + 0.3vw);
+  font-weight: 600;
 `;
 
 export default function Nav() {
