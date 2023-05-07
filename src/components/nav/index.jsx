@@ -19,6 +19,23 @@ export const LogInButton = styled.button`
   font-weight: 600;
 `;
 
+const NavBarLink = styled(NavLink)`
+  text-decoration: none;
+  margin: 0 10px;
+  color: var(--color-primary);
+  :hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+`;
+
+const NavList = styled.ul`
+  list-style-type: none;
+  padding: 10px 13px;
+  text-align: center;
+  margin-bottom: 0;
+`;
+
 export default function Nav() {
   const [open, setOpen] = useState(false);
   return (
@@ -32,39 +49,42 @@ export default function Nav() {
       </Button>
       <Collapse in={open}>
         <nav id="collapse-nav">
-          <ul>
+          <NavList>
             <li>
-              <NavLink
+              <NavBarLink
                 to="/"
                 onClick={() => setOpen(!open)}
                 aria-controls="collapse-nav"
                 aria-expanded={open}
+                className="fs-4"
               >
                 HOME
-              </NavLink>
+              </NavBarLink>
             </li>
             <li>
-              <NavLink
+              <NavBarLink
                 to="/venues"
                 onClick={() => setOpen(!open)}
                 aria-controls="collapse-nav"
                 aria-expanded={open}
+                className="fs-4"
               >
                 VENUES
-              </NavLink>
+              </NavBarLink>
             </li>
             <li>
-              <NavLink
+              <NavBarLink
                 to="/about"
                 onClick={() => setOpen(!open)}
                 aria-controls="collapse-nav"
                 aria-expanded={open}
+                className="fs-4"
               >
                 ABOUT
-              </NavLink>
+              </NavBarLink>
             </li>
-          </ul>
-          <NavLink className={"login"} to="/login">
+          </NavList>
+          <NavBarLink className={"login"} to="/login">
             <LogInButton
               onClick={() => setOpen(!open)}
               aria-controls="collapse-nav"
@@ -72,7 +92,7 @@ export default function Nav() {
             >
               LOG IN
             </LogInButton>
-          </NavLink>
+          </NavBarLink>
         </nav>
       </Collapse>
     </>

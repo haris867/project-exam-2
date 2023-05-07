@@ -21,6 +21,58 @@ const HomeSubHeading = styled.h2`
   margin-bottom: 0;
 `;
 
+export const BaseCard = styled(Card)`
+  background: none;
+  border: none;
+  width: 90%;
+  border-radius: 0%;
+  padding: 0;
+  gap: 40px;
+  margin-bottom: 40px;
+`;
+
+const BaseCardImg = styled(Card.Img)`
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+const HomeCardImg = styled(BaseCardImg)`
+  filter: brightness(40%);
+`;
+
+export const HomeCardTitle = styled(Card.Title)`
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  z-index: 1;
+  color: white;
+  position: absolute;
+  top: 42%;
+  width: 100%;
+`;
+
+export const CardContainer = styled(Row)`
+  width: 100%;
+`;
+
+const CardLink = styled(Link)`
+  color: var(--color-primary);
+  text-decoration: none;
+  :hover {
+    color: var(--color-primary);
+  }
+`;
+
+const CardImg = styled(Card.Img)`
+  border-radius: 0;
+  border: solid 2px var(--color-tertiary);
+`;
+
+const CardTitle = styled(Card.Title)`
+  font-weight: 400;
+`;
+
 export default function Home() {
   return (
     <div>
@@ -28,38 +80,145 @@ export default function Home() {
         <HomeHeading>Find a place to stay.</HomeHeading>{" "}
         <HomeSubHeading>For your next adventure.</HomeSubHeading>
       </HomeHeadingContainer>
-      <Container>
-        <Col xs={12} md={12} lg={12}>
-          <Row className="d-flex justify-content-center">
-            <Card>
-              <Link to={`/venues`}>
-                <Card.Title>Venues</Card.Title>
-                <Card.Img src="/images/beach-resort.jpg" alt="" />
-              </Link>
-            </Card>
-
-            <Card>
-              <Link to={`/`}>
-                <Card.Title>Sign up</Card.Title>
-                <Card.Img src="/images/city-suite.jpg" alt="" />
-              </Link>
-            </Card>
-
-            <Card>
-              <Link to={`/`}>
-                <Card.Title>Register your venue</Card.Title>
-                <Card.Img src="/images/urban-home.jpg" alt="" />
-              </Link>
-            </Card>
-            <Card>
-              <Link to={`/about`}>
-                <Card.Title>About Us</Card.Title>
-                <Card.Img src="/images/private-mansion.jpg" alt="" />
-              </Link>
-            </Card>
-          </Row>
+      <Container
+        style={{ width: "85%", padding: "0" }}
+        className="d-flex justify-content-center"
+      >
+        <Col xs={12} className="d-flex justify-content-center">
+          <CardContainer className="d-flex justify-content-center">
+            <Col
+              xs={12}
+              sm={11}
+              md={9}
+              lg={6}
+              className="d-flex justify-content-center"
+              style={{ padding: "0" }}
+            >
+              <BaseCard>
+                <Link to={`/venues`}>
+                  <HomeCardTitle className="fs-1">Venues</HomeCardTitle>
+                  <HomeCardImg src="/images/beach-resort.jpg" alt="" />
+                </Link>
+              </BaseCard>
+            </Col>
+            <Col
+              xs={12}
+              sm={11}
+              md={9}
+              lg={6}
+              className="d-flex justify-content-center"
+              style={{ padding: "0" }}
+            >
+              <BaseCard>
+                <Link to={`/register`}>
+                  <HomeCardTitle className="fs-1">Sign up</HomeCardTitle>
+                  <HomeCardImg src="/images/city-suite.jpg" alt="" />
+                </Link>
+              </BaseCard>
+            </Col>
+            <Col
+              xs={12}
+              sm={11}
+              md={9}
+              lg={6}
+              className="d-flex justify-content-center"
+              style={{ padding: "0" }}
+            >
+              <BaseCard>
+                <Link to={`/register`}>
+                  <HomeCardTitle className="fs-1">
+                    Register your venue
+                  </HomeCardTitle>
+                  <HomeCardImg src="/images/private-mansion.jpg" alt="" />
+                </Link>
+              </BaseCard>
+            </Col>
+            <Col
+              xs={12}
+              sm={11}
+              md={9}
+              lg={6}
+              className="d-flex justify-content-center"
+              style={{ padding: "0" }}
+            >
+              <BaseCard>
+                <Link to={`/about`}>
+                  <HomeCardTitle className="fs-1">About Us</HomeCardTitle>
+                  <HomeCardImg src="/images/city-suite.jpg" alt="" />
+                </Link>
+              </BaseCard>
+            </Col>
+          </CardContainer>
         </Col>
       </Container>
+      ;
     </div>
   );
 }
+
+//
+
+// <Container className="d-flex justify-content-center">
+//   <Col xs={11} className="d-flex justify-content-center">
+//     <CardContainer className="d-flex justify-content-center">
+// <Col
+//   xs={12}
+//   sm={10}
+//   md={8}
+//   lg={5}
+//   className="d-flex justify-content-center"
+// >
+// <BaseCard>
+//   <Link to={`/venues`}>
+//     <HomeCardTitle className="fs-1">Venues</HomeCardTitle>
+//     <HomeCardImg src="/images/beach-resort.jpg" alt="" />
+//   </Link>
+// </BaseCard>
+//       </Col>
+//       <Col
+//         xs={12}
+//         sm={10}
+//         md={8}
+//         lg={5}
+//         className="d-flex justify-content-center"
+//       >
+// <BaseCard>
+//   <Link to={`/register`}>
+//     <HomeCardTitle className="fs-1">Sign up</HomeCardTitle>
+//     <HomeCardImg src="/images/city-suite.jpg" alt="" />
+//   </Link>
+// </BaseCard>
+//       </Col>
+//       <Col
+//         xs={12}
+//         sm={10}
+//         md={8}
+//         lg={5}
+//         className="d-flex justify-content-center"
+//       >
+// <BaseCard>
+//   <Link to={`/register`}>
+//     <HomeCardTitle className="fs-1">
+//       Register your venue
+//     </HomeCardTitle>
+//     <HomeCardImg src="/images/private-mansion.jpg" alt="" />
+//   </Link>
+// </BaseCard>
+//       </Col>
+//       <Col
+//         xs={12}
+//         sm={10}
+//         md={8}
+//         lg={5}
+//         className="d-flex justify-content-center"
+//       >
+// <BaseCard>
+//   <Link to={`/about`}>
+//     <HomeCardTitle className="fs-1">About Us</HomeCardTitle>
+//     <HomeCardImg src="/images/city-suite.jpg" alt="" />
+//   </Link>
+// </BaseCard>
+//       </Col>
+//     </CardContainer>
+//   </Col>
+// </Container>;
