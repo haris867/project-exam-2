@@ -6,14 +6,12 @@ import Collapse from "react-bootstrap/Collapse";
 import styled from "styled-components";
 
 export const LogInButton = styled.button`
-  margin-bottom: 10px;
   border-radius: 4px;
   border: solid 2px var(--color-tertiary);
   background: var(--color-primary);
   color: white;
   padding: 4px 18px;
-  min-width: calc(160px + 3vw);
-  min-height: 40px;
+  min-width: calc(130px + 1vw);
   align-self: center;
   font-size: calc(1rem + 0.3vw);
   font-weight: 600;
@@ -89,6 +87,7 @@ export default function Nav() {
               onClick={() => setOpen(!open)}
               aria-controls="collapse-nav"
               aria-expanded={open}
+              className="mb-2"
             >
               LOG IN
             </LogInButton>

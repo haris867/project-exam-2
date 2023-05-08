@@ -94,8 +94,8 @@ export default function Login() {
                 className="form-link1 align-self-center text-center"
               >
                 <div>
-                  <p className="mt-3 mb-1">Already registered?</p>
-                  <p>LOG IN HERE</p>
+                  <p className="mt-3 mb-0">Already registered?</p>
+                  <p className="fw-bold">LOG IN HERE</p>
                 </div>
               </NavLink>
             </form>

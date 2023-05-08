@@ -72,8 +72,8 @@ export default function Login() {
               </LogInButton>
               <NavLink to="/register" className="form-link1 align-self-center">
                 <div>
-                  <p className="mt-3 mb-1">Not registered?</p>
-                  <p>SIGN UP NOW!</p>
+                  <p className="mt-3 mb-0">Not registered?</p>
+                  <p className="fw-bold">SIGN UP NOW!</p>
                 </div>
               </NavLink>
             </form>

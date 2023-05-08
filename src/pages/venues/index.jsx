@@ -3,6 +3,8 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 import { BaseCard, CardContainer } from "../home";
+import Login from "../login";
+import { LogInButton } from "../../components/nav";
 
 const venues = [
   {
@@ -72,13 +74,14 @@ export default function Venues() {
       >
         <Col xs={12} className="d-flex justify-content-center">
           <CardContainer className="d-flex justify-content-center">
-            <div
-              className="d-flex justify-content-center mb-3"
-              style={{ width: "95%", gap: "10px" }}
+            <Col
+              xs={11}
+              className="d-flex justify-content-center mb-4 flex-wrap"
+              style={{ gap: "10px" }}
             >
               <input type="text" style={{ width: "calc(18rem + 9vw)" }}></input>
-              <button>Search</button>
-            </div>
+              <LogInButton>SEARCH</LogInButton>
+            </Col>
             {venues.map((venue) => (
               <Col
                 xs={12}
@@ -98,7 +101,7 @@ export default function Venues() {
                     >
                       <CardTitle className="fs-3">{venue.name}</CardTitle>
                       <Card.Text className="fs-4">
-                        {venue.price}$ <span className="fs-6">per night</span>
+                        {venue.price}$ <span className="fs-6">/day</span>
                       </Card.Text>
                     </div>
                   </CardLink>

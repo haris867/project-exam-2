@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/scss/styles.scss";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/layout";
-import { About, Home, Venues, Login, Register } from "./pages";
+import { About, Home, Venues, Venue, Login, Register, Profile } from "./pages";
 
 function App() {
   return (
@@ -11,9 +11,11 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/venues" element={<Venues />} />
+          <Route path="/venue" element={<Venue />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>
     </div>
