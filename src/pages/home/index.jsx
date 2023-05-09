@@ -27,7 +27,6 @@ export const BaseCard = styled(Card)`
   width: 90%;
   border-radius: 0%;
   padding: 0;
-  gap: 40px;
   margin-bottom: 40px;
 `;
 
@@ -56,7 +55,7 @@ export const CardContainer = styled(Row)`
   width: 100%;
 `;
 
-const CardLink = styled(Link)`
+export const CardLink = styled(Link)`
   color: var(--color-primary);
   text-decoration: none;
   :hover {
@@ -64,12 +63,12 @@ const CardLink = styled(Link)`
   }
 `;
 
-const CardImg = styled(Card.Img)`
+export const CardImg = styled(Card.Img)`
   border-radius: 0;
   border: solid 2px var(--color-tertiary);
 `;
 
-const CardTitle = styled(Card.Title)`
+export const CardTitle = styled(Card.Title)`
   font-weight: 400;
 `;
 

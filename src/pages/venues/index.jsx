@@ -75,11 +75,11 @@ export default function Venues() {
         <Col xs={12} className="d-flex justify-content-center">
           <CardContainer className="d-flex justify-content-center">
             <Col
-              xs={11}
+              xs={12}
               className="d-flex justify-content-center mb-4 flex-wrap"
               style={{ gap: "10px" }}
             >
-              <input type="text" style={{ width: "calc(18rem + 9vw)" }}></input>
+              <input type="text" style={{ width: "calc(18rem + 9vw)" }} />
               <LogInButton>SEARCH</LogInButton>
             </Col>
             {venues.map((venue) => (
@@ -93,7 +93,7 @@ export default function Venues() {
                 data-id={venue.id}
               >
                 <BaseCard>
-                  <CardLink to={`/venue/${venue.id}`}>
+                  <CardLink to={`/venue`}>
                     <CardImg src={venue.image} alt="" />
                     <div
                       className="d-flex justify-content-between mt-2"
@@ -123,20 +123,20 @@ export default function Venues() {
 //   className="d-flex justify-content-center"
 //   style={{ padding: "0" }}
 // >
-//   <BaseCard>
-//     <CardLink to={`/register`}>
-//       <CardImg src="/images/city-suite.jpg" alt="" />
-//       <div
-//         className="d-flex justify-content-between mt-2"
-//         style={{ alignItems: "baseline" }}
-//       >
-//         <CardTitle className="fs-3">City Suite</CardTitle>
-//         <Card.Text className="fs-4">
-//           120$ <span className="fs-6">per night</span>
-//         </Card.Text>
-//       </div>
-//     </CardLink>
-//   </BaseCard>
+// <BaseCard>
+//   <CardLink to={`/register`}>
+//     <CardImg src="/images/city-suite.jpg" alt="" />
+//     <div
+//       className="d-flex justify-content-between mt-2"
+//       style={{ alignItems: "baseline" }}
+//     >
+//       <CardTitle className="fs-3">City Suite</CardTitle>
+//       <Card.Text className="fs-4">
+//         120$ <span className="fs-6">per night</span>
+//       </Card.Text>
+//     </div>
+//   </CardLink>
+// </BaseCard>
 // </Col>
 // <Col
 //   xs={12}
@@ -146,20 +146,20 @@ export default function Venues() {
 //   className="d-flex justify-content-center"
 //   style={{ padding: "0" }}
 // >
-//   <BaseCard>
-//     <CardLink to={`/register`}>
-//       <CardImg src="/images/private-mansion.jpg" alt="" />
-//       <div
-//         className="d-flex justify-content-between mt-2"
-//         style={{ alignItems: "baseline" }}
-//       >
-//         <CardTitle className="fs-3">Private Mansion</CardTitle>
-//         <Card.Text className="fs-4">
-//           120$ <span className="fs-6">per night</span>
-//         </Card.Text>
-//       </div>
-//     </CardLink>
-//   </BaseCard>
+// <BaseCard>
+//   <CardLink to={`/register`}>
+//     <CardImg src="/images/private-mansion.jpg" alt="" />
+//     <div
+//       className="d-flex justify-content-between mt-2"
+//       style={{ alignItems: "baseline" }}
+//     >
+//       <CardTitle className="fs-3">Private Mansion</CardTitle>
+//       <Card.Text className="fs-4">
+//         120$ <span className="fs-6">per night</span>
+//       </Card.Text>
+//     </div>
+//   </CardLink>
+// </BaseCard>
 // </Col>
 // <Col
 //   xs={12}

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { useForm } from "react-hook-form";
 import { LogInButton } from "../../components/nav";
 
-const LoginHeading = styled.h1`
+export const LoginHeading = styled.h1`
   font-weight: 500;
   margin-bottom: 40px;
 `;
@@ -21,11 +21,13 @@ export default function Login() {
       className="d-flex flex-column justify-content-center"
       style={{ width: "85%", padding: "0" }}
     >
-      <LoginHeading>Log in</LoginHeading>
       <Row
-        className="d-flex align-self-center justify-content-center"
+        className="d-flex align-content-center align-self-center flex-column justify-content-center"
         style={{ width: "100%" }}
       >
+        <Col xs={12} sm={8} md={6} className="p-0">
+          <LoginHeading>Log in</LoginHeading>
+        </Col>
         <Col
           className="form-card d-flex justify-content-center"
           xs={12}
