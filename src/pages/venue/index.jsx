@@ -11,6 +11,17 @@ export const LoginHeading = styled.h1`
   margin-bottom: 40px;
 `;
 
+const FacilityThumbnail = styled.div`
+  display: inline-block;
+  padding: 10px;
+  border: 3px solid var(--color-primary);
+  width: calc(40% + 2vw);
+  text-align: center;
+  background-color: white;
+  color: var(--color-primary);
+  font-weight: 700;
+`;
+
 export default function Login() {
   const { register, handleSubmit } = useForm();
 
@@ -52,7 +63,7 @@ export default function Login() {
                 className="fs-4"
                 style={{ color: "var(--color-primary)" }}
               >
-                120$ <span className="fs-6">per night</span>
+                120$ <span className="fs-6">/day</span>
               </Card.Text>
             </div>
             <div className="d-flex justify-content-center mt-3">
@@ -66,7 +77,7 @@ export default function Login() {
                 Description
               </CardTitle>
               <Card.Text style={{ color: "var(--color-primary)" }}>
-                This resort is out of this world. You won’t want to leave once
+                This resort is out of this world. You won't want to leave once
                 you get used to the pristine beaches, the wonderful weather and
                 the beautiful beaches.
               </Card.Text>
@@ -74,6 +85,33 @@ export default function Login() {
                 We have everything you need and much more. Welcome to our Beach
                 Resort.
               </Card.Text>
+            </div>
+            <div>
+              <Card.Text
+                className="fw-semibold mt-3"
+                style={{ color: "var(--color-primary)" }}
+              >
+                Max number of guests: 5
+              </Card.Text>
+            </div>
+            <div className="mt-4">
+              <CardTitle
+                className="fs-3"
+                style={{ color: "var(--color-primary)" }}
+              >
+                Facilities
+              </CardTitle>
+              <div
+                className="d-flex justify-content-between flex-wrap"
+                style={{ gap: "15px" }}
+              >
+                <FacilityThumbnail>WiFi</FacilityThumbnail>
+                <FacilityThumbnail>Breakfast</FacilityThumbnail>
+                <FacilityThumbnail className="disabled">
+                  Parking
+                </FacilityThumbnail>
+                <FacilityThumbnail>Pets</FacilityThumbnail>
+              </div>
             </div>
           </BaseCard>
         </Col>

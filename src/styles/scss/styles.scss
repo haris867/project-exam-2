@@ -159,6 +159,11 @@ footer a:hover {
   text-decoration: underline;
 }
 
+.disabled {
+  border: solid 3px red !important;
+  text-decoration: red line-through;
+}
+
 // ABOUT PAGE
 
 .about-page .card-img {
