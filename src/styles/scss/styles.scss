@@ -228,6 +228,83 @@ form {
   text-decoration: underline;
 }
 
+// CALENDAR turn into CSS Module
+
+// .calendar-container > div {
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+// }
+
+.react-datepicker {
+  background-color: var(--color-primary) !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.react-datepicker__header {
+  background-color: var(--color-primary) !important;
+  border: none !important;
+}
+
+.react-datepicker__month-container {
+  padding: calc(1em + 0.8vw);
+}
+
+.react-datepicker__current-month {
+  color: white !important;
+  text-transform: uppercase !important;
+  font-size: calc(1em + 0.5vw) !important;
+}
+
+.react-datepicker__day-name {
+  color: white !important;
+  text-transform: uppercase !important;
+}
+
+.react-datepicker__day-names {
+  display: flex;
+  justify-content: center;
+}
+
+.react-datepicker__day-name {
+  font-size: calc(1em + 0.5vw) !important;
+  width: 1.7rem !important;
+
+  margin-inline: calc(0.2em + 0.2vw) !important;
+}
+
+.react-datepicker__day {
+  color: white !important;
+  font-size: calc(1em + 0.5vw) !important;
+  margin: calc(0.2em + 0.2vw) !important;
+
+  &--in-range {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-primary) !important;
+  }
+  &--in-selecting-range {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-primary) !important;
+  }
+  &:hover {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-primary) !important;
+  }
+  &--selecting-range-start {
+    color: var(--color-primary) !important;
+    background-color: var(--color-secondary) !important;
+  }
+  &--disabled {
+    color: red !important;
+    &:hover {
+      color: red !important;
+      background-color: var(--color-primary) !important;
+    }
+  }
+}
+
 @media (min-width: 700px) {
   footer ul {
     display: flex;

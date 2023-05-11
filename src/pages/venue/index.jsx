@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Card, Row, Col } from "react-bootstrap";
 import { Route, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
 import { LogInButton } from "../../components/nav";
 import { BaseCard, CardLink, CardImg, CardTitle } from "../home";
+// import BookingCalendar from "../../components/calendar";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export const LoginHeading = styled.h1`
   font-weight: 500;
@@ -22,12 +25,21 @@ const FacilityThumbnail = styled.div`
   font-weight: 700;
 `;
 
-export default function Login() {
-  const { register, handleSubmit } = useForm();
+export default function VenuePage() {
+  // const { register, handleSubmit } = useForm();
 
-  function onSubmit(data) {
-    console.log(data);
-  }
+  // function onSubmit(data) {
+  //   console.log(data);
+  // }
+
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(null);
+  const onChange = (dates) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+    console.log(dates);
+  };
   return (
     <Container
       className="d-flex flex-column justify-content-center"
@@ -65,6 +77,17 @@ export default function Login() {
               >
                 120$ <span className="fs-6">/day</span>
               </Card.Text>
+            </div>
+            <div className="calendar-container d-flex justify-content-center align-self-center">
+              <DatePicker
+                selected={startDate}
+                onChange={onChange}
+                startDate={startDate}
+                minDate={new Date()}
+                endDate={endDate}
+                selectsRange
+                inline
+              />
             </div>
             <div className="d-flex justify-content-center mt-3">
               <LogInButton>BOOK NOW</LogInButton>
