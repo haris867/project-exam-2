@@ -248,14 +248,28 @@ form {
   border: none !important;
 }
 
+.react-datepicker__navigation {
+  height: calc(20px + 2vw) !important;
+  align-items: baseline !important;
+}
+
+.react-datepicker__navigation-icon:before {
+  border-color: white !important;
+  top: calc(9px + 1vw) !important;
+  height: 13px !important;
+  width: 13px !important;
+}
+
 .react-datepicker__month-container {
-  padding: calc(1em + 0.8vw);
+  padding: calc(0.5em + 0.8vw);
 }
 
 .react-datepicker__current-month {
   color: white !important;
   text-transform: uppercase !important;
   font-size: calc(1em + 0.5vw) !important;
+  position: relative;
+  bottom: 10px;
 }
 
 .react-datepicker__day-name {
@@ -289,6 +303,10 @@ form {
     color: var(--color-primary) !important;
   }
   &:hover {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-primary) !important;
+  }
+  &--selected {
     background-color: var(--color-secondary) !important;
     color: var(--color-primary) !important;
   }
