@@ -13,7 +13,7 @@ export const LogInButton = styled.button`
   padding: 4px 18px;
   min-width: calc(130px + 1vw);
   align-self: center;
-  font-size: calc(1rem + 0.3vw);
+  font-size: calc(0.8rem + 0.3vw);
   font-weight: 600;
 `;
 
