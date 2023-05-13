@@ -42,6 +42,7 @@ export default function Nav() {
         onClick={() => setOpen(!open)}
         aria-controls="collapse-nav"
         aria-expanded={open}
+        className="d-flex"
       >
         <CgMenu />
       </Button>

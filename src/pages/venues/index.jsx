@@ -33,6 +33,19 @@ const venues = [
     price: 124,
     id: 4,
   },
+
+  {
+    name: "Private Mansion",
+    image: "/images/private-mansion.jpg",
+    price: 122,
+    id: 5,
+  },
+  {
+    name: "Urban Home",
+    image: "/images/city-suite.jpg",
+    price: 124,
+    id: 6,
+  },
 ];
 
 const AboutHeadingContainer = styled.div`
@@ -113,7 +126,6 @@ export default function Venues() {
             </Collapse>
             {venues.map((venue) => (
               <Col
-                id="search-form"
                 xs={12}
                 md={6}
                 lg={4}

@@ -88,8 +88,8 @@ export default function Home() {
             <Col
               xs={12}
               sm={11}
-              md={9}
-              lg={6}
+              md={6}
+              lg={5}
               className="d-flex justify-content-center"
               style={{ padding: "0" }}
             >
@@ -103,8 +103,8 @@ export default function Home() {
             <Col
               xs={12}
               sm={11}
-              md={9}
-              lg={6}
+              md={6}
+              lg={5}
               className="d-flex justify-content-center"
               style={{ padding: "0" }}
             >
@@ -118,8 +118,8 @@ export default function Home() {
             <Col
               xs={12}
               sm={11}
-              md={9}
-              lg={6}
+              md={6}
+              lg={5}
               className="d-flex justify-content-center"
               style={{ padding: "0" }}
             >
@@ -135,8 +135,8 @@ export default function Home() {
             <Col
               xs={12}
               sm={11}
-              md={9}
-              lg={6}
+              md={6}
+              lg={5}
               className="d-flex justify-content-center"
               style={{ padding: "0" }}
             >

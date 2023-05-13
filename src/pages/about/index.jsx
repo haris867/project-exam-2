@@ -78,6 +78,7 @@ export default function About() {
               sm={11}
               md={9}
               lg={6}
+              xl={5}
               className="d-flex justify-content-center"
               style={{ padding: "0" }}
             >
@@ -108,6 +109,7 @@ export default function About() {
               sm={11}
               md={9}
               lg={6}
+              xl={5}
               className="d-flex justify-content-center"
               style={{ padding: "0" }}
             >

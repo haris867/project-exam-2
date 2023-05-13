@@ -357,9 +357,6 @@ form {
   .about-page .card-title {
     font-size: 1.6em;
   }
-  .about-page .card-text {
-    font-size: 1.3em;
-  }
 
   .show {
     display: block;
@@ -376,7 +373,7 @@ form {
     width: 190px;
   }
   header .btn {
-    display: none;
+    display: none !important;
   }
 
   nav {

@@ -51,7 +51,7 @@ export default function VenuePage() {
           lg={6}
           xl={5}
         >
-          <BaseCard className="w-100">
+          <BaseCard>
             <CardImg src="/images/beach-resort.jpg" alt="" />
             <div
               className="d-flex justify-content-between mt-2"
@@ -121,22 +121,34 @@ export default function VenuePage() {
                 </Card.Text>
               </div>
               <div className="mt-4 d-flex justify-content-center align-items-center">
-                <CardTitle
-                  className="fs-3 mx-2"
+                <Card.Text
+                  className="fs-3 mx-2 mb-0"
                   style={{ color: "var(--color-primary)" }}
                 >
-                  Hosted by:
-                </CardTitle>
-                <Link to="/profile">
+                  Host:
+                </Card.Text>
+                <Link
+                  to="/profile"
+                  className="d-flex align-items-center text-decoration-none"
+                  style={{}}
+                >
                   <img
                     src="/images/messi-profile.jpg"
                     alt=""
-                    className="rounded-circle mx-2"
+                    className="rounded-circle me-2"
                     style={{
-                      maxWidth: "60px",
+                      maxWidth: "50px",
                       border: "2px solid var(--color-tertiary)",
                     }}
                   />
+                  <Card.Text
+                    className="fs-5"
+                    style={{
+                      color: "var(--color-primary)",
+                    }}
+                  >
+                    Lionel Messi
+                  </Card.Text>
                 </Link>
               </div>
             </div>

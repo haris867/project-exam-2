@@ -28,13 +28,16 @@ export default function Profile() {
         style={{ width: "100%" }}
       >
         <Col xs={12} sm={11} md={8} lg={7}>
-          <Col className="d-flex align-items-center mb-2">
-            <div>
+          <Col
+            className="d-flex align-items-center mb-2 mx-auto"
+            style={{ width: "95%" }}
+          >
+            <div className="d-flex flex-column align-items-center">
               <img
                 src="/images/messi-profile.jpg"
                 alt=""
                 className="rounded-circle"
-                style={{ maxWidth: "100px" }}
+                style={{ maxWidth: "80px" }}
               />
               <p
                 className="text-center"
@@ -51,7 +54,7 @@ export default function Profile() {
                 Update avatar
               </p>
             </div>
-            <h1 className="mb-5 ms-3 fw-normal fs-2">Lionel Messi</h1>
+            <h1 className="mb-5 ms-1 fw-normal fs-2">Lionel Messi</h1>
           </Col>
           <Collapse in={open}>
             <Col id="update-avatar-form" xs={12}>
@@ -72,12 +75,12 @@ export default function Profile() {
           <Col className="d-flex align-items-center flex-column">
             <h2
               className="mb-3 fs-3"
-              style={{ width: "100%", color: "var(--color-primary)" }}
+              style={{ width: "90%", color: "var(--color-primary)" }}
             >
               My bookings
             </h2>
 
-            <BaseCard className="mb-3 w-100">
+            <BaseCard className="mb-3">
               <CardLink to={`/register`}>
                 <Card.Text className="fs-4 mb-1">Beach Resort</Card.Text>
                 <CardImg src="/images/beach-resort.jpg" alt="" />
@@ -89,7 +92,7 @@ export default function Profile() {
                 </div>
               </CardLink>
             </BaseCard>
-            <BaseCard className="mb-3 w-100">
+            <BaseCard className="mb-3">
               <CardLink to={`/register`}>
                 <Card.Text className="fs-4 mb-1">City Suite</Card.Text>
                 <CardImg src="/images/city-suite.jpg" alt="" />
@@ -101,7 +104,7 @@ export default function Profile() {
                 </div>
               </CardLink>
             </BaseCard>
-            <BaseCard className="mb-3 w-100">
+            <BaseCard className="mb-3">
               <CardLink to={`/register`}>
                 <Card.Text className="fs-4 mb-1">Beach Resort</Card.Text>
                 <CardImg src="/images/beach-resort.jpg" alt="" />
@@ -113,7 +116,7 @@ export default function Profile() {
                 </div>
               </CardLink>
             </BaseCard>
-            <BaseCard className="mb-3 w-100">
+            <BaseCard className="mb-3">
               <CardLink to={`/register`}>
                 <Card.Text className="fs-4 mb-1">City Suite</Card.Text>
                 <CardImg src="/images/city-suite.jpg" alt="" />
