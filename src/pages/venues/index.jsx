@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import Collapse from "react-bootstrap/Collapse";
+import { CgSearch } from "react-icons/cg";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
@@ -37,6 +39,9 @@ const AboutHeadingContainer = styled.div`
   width: 85%;
   margin: 30px auto 0 auto;
   font-weight: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const AboutHeading = styled.h1`
@@ -62,32 +67,56 @@ const CardTitle = styled(Card.Title)`
 `;
 
 export default function Venues() {
+  const [open, setOpen] = useState(false);
   console.log(venues);
   return (
     <div>
       <AboutHeadingContainer>
-        <AboutHeading>Venues</AboutHeading>
+        <AboutHeading className="fs-2">Venues</AboutHeading>
+        <CgSearch
+          onClick={() => setOpen(!open)}
+          aria-controls="search-form"
+          aria-expanded={open}
+          style={{
+            fontSize: "calc(1.5em + 1vw)",
+            color: "var(--color-primary)",
+            cursor: "pointer",
+          }}
+        />
       </AboutHeadingContainer>
       <Container
         style={{ width: "85%", padding: "0" }}
-        className="d-flex justify-content-center"
+        className="d-flex justify-content-center mt-3"
       >
         <Col xs={12} className="d-flex justify-content-center">
           <CardContainer className="d-flex justify-content-center">
-            <Col
-              xs={12}
-              className="d-flex justify-content-center mb-4 flex-wrap"
-              style={{ gap: "10px" }}
-            >
-              <input type="text" style={{ width: "calc(18rem + 9vw)" }} />
-              <LogInButton>SEARCH</LogInButton>
-            </Col>
+            <Collapse in={open}>
+              <Col xs={12} md={9} lg={9} className="mb-4">
+                <div
+                  className="d-flex justify-content-center flex-wrap"
+                  style={{ gap: "10px" }}
+                >
+                  <input
+                    className="m-2"
+                    type="text"
+                    placeholder="Search"
+                    style={{
+                      height: "calc(2.5em + 0.7vw)",
+                      flex: "1 0 100px",
+                      width: "calc(18rem + 9vw)",
+                      maxWidth: "350px",
+                    }}
+                  />
+                  <LogInButton>SEARCH</LogInButton>
+                </div>
+              </Col>
+            </Collapse>
             {venues.map((venue) => (
               <Col
+                id="search-form"
                 xs={12}
-                sm={11}
-                md={9}
-                lg={6}
+                md={6}
+                lg={4}
                 className="d-flex justify-content-center"
                 style={{ padding: "0" }}
                 data-id={venue.id}
@@ -99,9 +128,10 @@ export default function Venues() {
                       className="d-flex justify-content-between mt-2"
                       style={{ alignItems: "baseline" }}
                     >
-                      <CardTitle className="fs-3">{venue.name}</CardTitle>
-                      <Card.Text className="fs-4">
-                        {venue.price}$ <span className="fs-6">/day</span>
+                      <CardTitle className="fs-5">{venue.name}</CardTitle>
+                      <Card.Text className="fs-6 fw-bold d-flex">
+                        {venue.price}${" "}
+                        <span className="fs-6 fw-normal">/day</span>
                       </Card.Text>
                     </div>
                   </CardLink>

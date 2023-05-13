@@ -55,10 +55,10 @@ export default function Profile() {
           </Col>
           <Collapse in={open}>
             <Col id="update-avatar-form" xs={12}>
-              <div className="form-card d-flex justify-content-center flex-wrap p-2 mb-3">
+              <div className="d-flex justify-content-center flex-wrap p-2 mb-3">
                 <input
                   className="m-2"
-                  type="text"
+                  type="url"
                   placeholder="Image URL"
                   style={{
                     height: "calc(2.5em + 0.7vw)",

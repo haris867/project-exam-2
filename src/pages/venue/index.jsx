@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Card, Row, Col } from "react-bootstrap";
-import { Route, NavLink } from "react-router-dom";
+import { Route, NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
 import { LogInButton } from "../../components/nav";
@@ -93,14 +93,7 @@ export default function VenuePage() {
                 Resort.
               </Card.Text>
             </div>
-            <div>
-              <Card.Text
-                className="fw-semibold mt-3"
-                style={{ color: "var(--color-primary)" }}
-              >
-                Max number of guests: 5
-              </Card.Text>
-            </div>
+
             <div className="mt-4">
               <CardTitle
                 className="fs-3"
@@ -118,6 +111,33 @@ export default function VenuePage() {
                   Parking
                 </FacilityThumbnail>
                 <FacilityThumbnail>Pets</FacilityThumbnail>
+              </div>
+              <div>
+                <Card.Text
+                  className="fw-semibold mt-3"
+                  style={{ color: "var(--color-primary)" }}
+                >
+                  Max number of guests: 5
+                </Card.Text>
+              </div>
+              <div className="mt-4 d-flex justify-content-center align-items-center">
+                <CardTitle
+                  className="fs-3 mx-2"
+                  style={{ color: "var(--color-primary)" }}
+                >
+                  Hosted by:
+                </CardTitle>
+                <Link to="/profile">
+                  <img
+                    src="/images/messi-profile.jpg"
+                    alt=""
+                    className="rounded-circle mx-2"
+                    style={{
+                      maxWidth: "60px",
+                      border: "2px solid var(--color-tertiary)",
+                    }}
+                  />
+                </Link>
               </div>
             </div>
           </BaseCard>
