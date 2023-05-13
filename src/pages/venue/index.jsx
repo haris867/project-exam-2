@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Card, Row, Col } from "react-bootstrap";
-import { Route, NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useForm } from "react-hook-form";
 import { LogInButton } from "../../components/nav";
-import { BaseCard, CardLink, CardImg, CardTitle } from "../home";
+import { BaseCard, CardImg, CardTitle } from "../home";
 import BookingCalendar from "../../components/calendar";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export const LoginHeading = styled.h1`
