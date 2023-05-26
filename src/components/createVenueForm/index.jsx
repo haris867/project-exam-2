@@ -79,7 +79,7 @@ export default function CreateVenueForm() {
 
   return (
     <div className="d-flex justify-content-center flex-column w-100">
-      <h1>Create venue</h1>
+      <h2 className="fs-3 m-0 primary-color fw-normal mb-2">Create venue</h2>
       <div className="error-message">{errorMessage}</div>
       <form
         className="form-card my-login-modal d-flex flex-column mb-2"
@@ -109,8 +109,7 @@ export default function CreateVenueForm() {
         {images.length < 8 ? (
           <div
             onClick={addImageInput}
-            className="add-image-icon d-flex mx-3"
-            style={{ cursor: "pointer" }}
+            className="add-image-icon d-flex mx-3 cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

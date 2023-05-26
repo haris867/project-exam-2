@@ -15,7 +15,6 @@ import { PrimaryButton } from "../../components/commonStyles/buttons";
 import { SecondaryButton } from "../../components/commonStyles/buttons";
 import { MainHeading } from "../../components/commonStyles/headings";
 import { Helmet } from "react-helmet";
-
 import * as S from "./index.styles";
 
 export default function VenuePage() {
@@ -55,10 +54,7 @@ export default function VenuePage() {
   }
 
   return (
-    <Container
-      className="d-flex flex-column justify-content-center p-0"
-      style={{ width: "85%" }}
-    >
+    <Container className="d-flex flex-column justify-content-center p-0 w-85">
       <Helmet>
         <title>
           {data && data.name ? `Holidaze | ${data.name}` : "Holidaze"}
@@ -87,22 +83,15 @@ export default function VenuePage() {
                 })}
               </Carousel>
             ) : (
-              <CardImg src="/images/beach-resort.jpg" alt="" />
+              <CardImg
+                className="object-fit-contain"
+                src="/images/holidaze-logo.png"
+                alt="Holidaze logo"
+              />
             )}
-            <div
-              className="d-flex justify-content-between mt-2"
-              style={{ alignItems: "baseline" }}
-            >
-              <Card.Text
-                className="fs-4"
-                style={{ color: "var(--color-primary)" }}
-              >
-                Price
-              </Card.Text>
-              <Card.Text
-                className="fs-5"
-                style={{ color: "var(--color-primary)" }}
-              >
+            <div className="d-flex justify-content-between mt-2 align-items-baseline">
+              <Card.Text className="fs-4 primary-color">Price</Card.Text>
+              <Card.Text className="fs-5 primary-color">
                 {data.price}$ <span className="fs-6">/day</span>
               </Card.Text>
             </div>
@@ -135,14 +124,9 @@ export default function VenuePage() {
                       <div>
                         {data.bookings.map((booking, index) => {
                           return (
-                            <div
+                            <S.SingleBooking
                               key={booking.id}
                               className="d-flex justify-content-between align-items-center mb-2"
-                              style={{
-                                backgroundColor: "var(--color-primary)",
-                                color: "white",
-                                padding: "10px",
-                              }}
                             >
                               <div className="fs-2 ms-2">{index + 1} </div>
                               <div className="text-center">
@@ -157,7 +141,7 @@ export default function VenuePage() {
                                 </div>
                                 <div>Number of guests: {booking.guests}</div>
                               </div>
-                            </div>
+                            </S.SingleBooking>
                           );
                         })}
                       </div>
@@ -171,28 +155,23 @@ export default function VenuePage() {
               </div>
             ) : null}
             <div className="mt-4">
-              <Card.Title
-                className="fs-4"
-                style={{ color: "var(--color-primary)" }}
-              >
+              <Card.Title className="fs-4 primary-color">
                 Description
               </Card.Title>
-              <Card.Text style={{ color: "var(--color-primary)" }}>
+              <Card.Text className="primary-color">
                 {data.description}
               </Card.Text>
             </div>
-
+            {data.maxGuests ? (
+              <div>
+                <Card.Text className="fw-semibold mt-3 text-center primary-color">
+                  Max number of guests: {data.maxGuests}
+                </Card.Text>
+              </div>
+            ) : null}
             <div className="mt-4">
-              <Card.Title
-                className="fs-3"
-                style={{ color: "var(--color-primary)" }}
-              >
-                Facilities
-              </Card.Title>
-              <div
-                className="d-flex justify-content-between flex-wrap"
-                style={{ gap: "15px" }}
-              >
+              <Card.Title className="fs-3 primary-color">Facilities</Card.Title>
+              <S.FacilityContainer className="d-flex justify-content-between flex-wrap">
                 <S.FacilityThumbnail
                   className={data.meta && data.meta.wifi ? " " : "disabled"}
                 >
@@ -215,22 +194,10 @@ export default function VenuePage() {
                 >
                   Pets
                 </S.FacilityThumbnail>
-              </div>
-              {data.maxGuests ? (
-                <div>
-                  <Card.Text
-                    className="fw-semibold mt-3 text-center"
-                    style={{ color: "var(--color-primary)" }}
-                  >
-                    Max number of guests: {data.maxGuests}
-                  </Card.Text>
-                </div>
-              ) : null}
+              </S.FacilityContainer>
+
               <div className="mt-4 d-flex justify-content-center align-items-center">
-                <Card.Text
-                  className="fs-3 mx-2 mb-0"
-                  style={{ color: "var(--color-primary)" }}
-                >
+                <Card.Text className="fs-3 mx-2 mb-0 primary-color">
                   Host:
                 </Card.Text>
                 <Link
@@ -242,39 +209,20 @@ export default function VenuePage() {
                   className="d-flex align-items-center text-decoration-none"
                 >
                   {data.owner && data.owner.avatar ? (
-                    <img
+                    <S.HostImage
                       src={data.owner.avatar}
                       alt=""
                       className="rounded-circle me-2"
-                      style={{
-                        minWidth: "50px",
-                        minHeight: "50px",
-                        maxHeight: "50px",
-                        maxWidth: "50px",
-                        border: "2px solid var(--color-tertiary)",
-                      }}
                     />
                   ) : (
-                    <img
-                      src="/images/messi-profile.jpg"
+                    <S.HostImage
+                      src="/images/holidaze-logo.png"
                       alt=""
-                      className="rounded-circle me-2"
-                      style={{
-                        minWidth: "50px",
-                        minHeight: "50px",
-                        maxHeight: "50px",
-                        maxWidth: "50px",
-                        border: "2px solid var(--color-tertiary)",
-                      }}
+                      className="rounded-circle me-2 object-fit-contain"
                     />
                   )}
                   {data.owner && data.owner.name ? (
-                    <Card.Text
-                      className="fs-5"
-                      style={{
-                        color: "var(--color-primary)",
-                      }}
-                    >
+                    <Card.Text className="fs-5 primary-color">
                       {data.owner.name}
                     </Card.Text>
                   ) : null}
@@ -307,21 +255,14 @@ export default function VenuePage() {
                   </SecondaryButton>
                   <div className="d-flex justify-content-center">
                     <Collapse in={openDelete}>
-                      <div
-                        id="delete-form"
-                        className="p-0"
-                        style={{ maxWidth: "300px" }}
-                      >
-                        <div
-                          className="form-card text-center"
-                          style={{ padding: "20px 30px" }}
-                        >
+                      <S.DeleteFormContainer id="delete-form" className="p-0">
+                        <S.DeleteForm className="form-card text-center">
                           <h4>Are you sure?</h4>
                           <SecondaryButton onClick={deleteVenue}>
                             YES
                           </SecondaryButton>
-                        </div>
-                      </div>
+                        </S.DeleteForm>
+                      </S.DeleteFormContainer>
                     </Collapse>
                   </div>
                 </div>

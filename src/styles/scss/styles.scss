@@ -28,6 +28,26 @@ h1 {
   font-weight: 900;
 }
 
+.object-fit-contain {
+  object-fit: contain !important;
+}
+
+.w-85 {
+  width: 85%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.primary-color {
+  color: var(--color-primary);
+}
+
 //  Check
 
 header .btn {

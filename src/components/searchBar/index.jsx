@@ -43,11 +43,13 @@ export default function SearchBar() {
         />
       </div>
       {searchQuery.length > 0 && (
-        <St.SearchResultsContainer>
-          Search results
+        <St.SearchResultsContainer className="mb-3">
+          <St.SearchBarText className="text-center fs-3 mb-2">
+            Search results
+          </St.SearchBarText>
           <div className="search-results d-flex justify-content-center mb-2 pt-2">
             {filteredVenues.length > 0 ? (
-              <div className="d-flex flex-wrap">
+              <div className="d-flex flex-wrap justify-content-center">
                 {filteredVenues.map((venue) => (
                   <Col
                     xs={12}
@@ -59,39 +61,29 @@ export default function SearchBar() {
                   >
                     <S.BaseCard>
                       <S.CardLink to={`/venue/${venue.id}`}>
-                        <S.CardImg
-                          src={
-                            venue.media.length > 0
-                              ? venue.media[0]
-                              : "/images/beach-resort.jpg"
-                          }
-                          alt=""
-                          style={{
-                            objectFit: "cover",
-                            width: "100%",
-                          }}
-                        />
-                        <div
-                          className="d-flex justify-content-between mt-2"
-                          style={{
-                            alignItems: "baseline",
-                            maxHeight: "32px",
-                            color: "white",
-                          }}
-                        >
+                        {venue.media && venue.media.length > 0 ? (
+                          <S.CardImg src={venue.media[0]} alt={venue.name} />
+                        ) : (
+                          <S.CardImg
+                            className="object-fit-contain"
+                            src="/images/holidaze-logo.png"
+                            alt="Holidaze logo"
+                          />
+                        )}
+                        <St.CardTextContainer className="d-flex justify-content-between mt-2 align-items-baseline">
                           <Card.Title className="fs-5">{venue.name}</Card.Title>
                           <Card.Text className="fs-6 ms-2 fw-bold d-flex">
                             {venue.price}${" "}
                             <span className="fs-6 fw-normal">/day</span>
                           </Card.Text>
-                        </div>
+                        </St.CardTextContainer>
                       </S.CardLink>
                     </S.BaseCard>
                   </Col>
                 ))}
               </div>
             ) : (
-              <St.NoResults style={{ color: "white" }}>No results</St.NoResults>
+              <St.SearchBarText>No results</St.SearchBarText>
             )}
           </div>
         </St.SearchResultsContainer>

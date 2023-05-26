@@ -17,10 +17,7 @@ export default function Home() {
         <MainHeading className="mb-0">Find a place to stay.</MainHeading>{" "}
         <S.HomeSubHeading>For your next adventure.</S.HomeSubHeading>
       </MainHeadingContainer>
-      <Container
-        style={{ width: "85%" }}
-        className="d-flex justify-content-center p-0"
-      >
+      <Container className="d-flex justify-content-center p-0 w-85">
         <Col xs={12} className="d-flex justify-content-center">
           <Row className="d-flex justify-content-center w-100">
             <Col
@@ -79,7 +76,7 @@ export default function Home() {
               <BaseCard>
                 <Link to={`/about`}>
                   <S.HomeCardTitle className="fs-1">About Us</S.HomeCardTitle>
-                  <S.HomeCardImg src="/images/city-suite.jpg" alt="" />
+                  <S.HomeCardImg src="/images/urban-home.jpg" alt="" />
                 </Link>
               </BaseCard>
             </Col>

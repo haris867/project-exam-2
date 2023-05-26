@@ -105,7 +105,6 @@ export default function BookingCalendar() {
 
   return (
     <div>
-      <div className="error-message mb-2">{errorMessage}</div>
       <div className="calendar-container d-flex justify-content-center align-self-center">
         <DatePicker
           selected={startDate}
@@ -129,6 +128,8 @@ export default function BookingCalendar() {
           }}
         />
       </div>
+      <div className="error-message my-2">{errorMessage}</div>
+
       <div className="form-container d-flex justify-content-center mt-3">
         <CalendarForm
           className="form-card my-login-modal d-flex flex-column"

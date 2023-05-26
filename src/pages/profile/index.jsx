@@ -44,16 +44,10 @@ export default function Profile() {
   console.log(data.venues);
 
   return (
-    <Container
-      className="d-flex flex-column justify-content-center p-0"
-      style={{ width: "85%" }}
-    >
+    <Container className="d-flex flex-column justify-content-center p-0 w-85">
       <Row className="d-flex align-self-center justify-content-center w-100">
         <Col xs={12} sm={11} md={8} lg={7}>
-          <Col
-            className="d-flex align-items-center mb-2 mx-auto"
-            style={{ width: "95%" }}
-          >
+          <Col className="d-flex align-items-center mb-2 mx-auto w-100">
             <div className="d-flex flex-column align-items-center">
               {data.avatar ? (
                 <S.ProfileImage
@@ -63,26 +57,20 @@ export default function Profile() {
                 />
               ) : (
                 <S.ProfileImage
-                  src="/images/messi-profile.jpg"
+                  src="/images/holidaze-logo.png"
                   alt=""
-                  className="rounded-circle"
+                  className="rounded-circle object-fit-contain"
                 />
               )}
               {loggedInUser.name === data.name ? (
-                <p
-                  className="text-center"
-                  style={{
-                    fontSize: "1em",
-                    color: "var(--color-primary)",
-                    textDecoration: "underline",
-                    cursor: "pointer",
-                  }}
+                <S.UpdateAvatarButton
+                  className="text-center cursor-pointer text-decoration-underline primary-color"
                   onClick={() => setOpen(!open)}
                   aria-controls="update-avatar-form"
                   aria-expanded={open}
                 >
                   Update avatar
-                </p>
+                </S.UpdateAvatarButton>
               ) : null}
             </div>
             <h1 className="mb-5 fw-normal fs-2">{data.name}</h1>
@@ -94,16 +82,8 @@ export default function Profile() {
           </Collapse>
           <Col className="d-flex align-items-center flex-column">
             {data.venueManager ? (
-              <div
-                className="d-flex justify-content-between align-items-center mb-3"
-                style={{ width: "90%" }}
-              >
-                <h2
-                  className="fs-3 m-0"
-                  style={{ color: "var(--color-primary)" }}
-                >
-                  Venues
-                </h2>
+              <div className="d-flex justify-content-between align-items-center mb-3 w-90">
+                <h2 className="fs-3 m-0 primary-color">Venues</h2>
                 {loggedInUser.name === data.name ? (
                   <S.PlusIcon
                     onClick={() => setOpenForm(!openForm)}
@@ -131,14 +111,15 @@ export default function Profile() {
                         <Card.Text className="fs-4 mb-1">
                           {venue.name}
                         </Card.Text>
-                        <St.CardImg
-                          src={
-                            venue.media.length > 0
-                              ? venue.media[0]
-                              : "/images/beach-resort.jpg"
-                          }
-                          alt=""
-                        />
+                        {venue.media && venue.media.length > 0 ? (
+                          <St.CardImg src={venue.media[0]} alt={venue.name} />
+                        ) : (
+                          <St.CardImg
+                            className="object-fit-contain"
+                            src="/images/holidaze-logo.png"
+                            alt="Holidaze logo"
+                          />
+                        )}
                       </St.CardLink>
                     </St.BaseCard>
                   ))
@@ -151,36 +132,35 @@ export default function Profile() {
               )
             ) : null}
             {loggedInUser.name === data.name ? (
-              <div>
-                <h2
-                  className="mb-3 fs-3"
-                  style={{ width: "90%", color: "var(--color-primary)" }}
-                >
-                  Bookings
-                </h2>
+              <div className="w-90">
+                <h2 className="mb-3 fs-3 primary-color">Bookings</h2>
                 {data.bookings && data.bookings.length > 0 ? (
                   data.bookings.map((booking) => (
-                    <St.BaseCard className="mb-3">
+                    <St.BaseCard className="mb-3 w-100">
                       <St.CardLink to={`/venue/${booking.venue.id}`}>
                         <Card.Text className="fs-4 mb-1">
                           {booking.venue.name}
                         </Card.Text>
-                        <St.CardImg
-                          src={
-                            booking.venue.media.length > 0
-                              ? booking.venue.media[0]
-                              : "/images/beach-resort.jpg"
-                          }
-                          alt=""
-                        />
-
+                        {booking.venue.media &&
+                        booking.venue.media.length > 0 ? (
+                          <St.CardImg
+                            src={booking.venue.media[0]}
+                            alt={booking.venue.name}
+                          />
+                        ) : (
+                          <St.CardImg
+                            className="object-fit-contain"
+                            src="/images/holidaze-logo.png"
+                            alt="Holidaze logo"
+                          />
+                        )}
                         <div className="d-flex justify-content-between mt-2">
                           <Card.Text className="fs-6">
                             {new Date(booking.dateFrom).toLocaleDateString()} -
                             {new Date(booking.dateTo).toLocaleDateString()}
                           </Card.Text>
                           <Card.Text className="fs-6">
-                            Number of guests: {booking.guests}
+                            Guests: {booking.guests}
                           </Card.Text>
                         </div>
                       </St.CardLink>

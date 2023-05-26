@@ -14,3 +14,7 @@ export const PlusIcon = styled(CgMathPlus)`
   color: var(--color-primary);
   font-size: calc(2em + 0.8vw);
 `;
+
+export const UpdateAvatarButton = styled.p`
+  font-size: 1em;
+`;

@@ -13,6 +13,11 @@ export const SearchResultsContainer = styled.div`
   background-color: var(--color-primary);
 `;
 
-export const NoResults = styled.div`
+export const SearchBarText = styled.div`
+  color: white;
+`;
+
+export const CardTextContainer = styled.div`
+  max-height: 32px;
   color: white;
 `;

@@ -17,7 +17,7 @@ export default function UpdateAvatarForm() {
   }
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="text-center">Loading...</div>;
   }
 
   if (isError) {
@@ -39,9 +39,6 @@ export default function UpdateAvatarForm() {
           placeholder="Image URL"
           required={true}
           {...register("avatar")}
-          style={{
-            height: "calc(2.5em + 0.7vw)",
-          }}
         />
         <PrimaryButton>UPDATE</PrimaryButton>
       </form>
