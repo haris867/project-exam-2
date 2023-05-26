@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Collapse from "react-bootstrap/Collapse";
-import { CgSearch } from "react-icons/cg";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import * as S from "../../components/commonStyles/cards";
 import * as St from "./index.styles";
