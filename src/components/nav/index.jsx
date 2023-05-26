@@ -1,41 +1,21 @@
-import { NavLink } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { CgMenu } from "react-icons/cg";
 import { useState } from "react";
 import Collapse from "react-bootstrap/Collapse";
-import styled from "styled-components";
-
-export const LogInButton = styled.button`
-  border-radius: 4px;
-  border: solid 2px var(--color-tertiary);
-  background: var(--color-primary);
-  color: white;
-  padding: 4px 18px;
-  min-width: calc(130px + 1vw);
-  align-self: center;
-  font-size: calc(0.8rem + 0.3vw);
-  font-weight: 600;
-`;
-
-const NavBarLink = styled(NavLink)`
-  text-decoration: none;
-  margin: 0 10px;
-  color: var(--color-primary);
-  :hover {
-    color: var(--color-primary);
-    text-decoration: underline;
-  }
-`;
-
-const NavList = styled.ul`
-  list-style-type: none;
-  padding: 10px 13px;
-  text-align: center;
-  margin-bottom: 0;
-`;
+import { load, remove } from "../../storage";
+import * as S from "./index.styles";
+import { PrimaryButton } from "../commonStyles/buttons";
 
 export default function Nav() {
+  const loggedIn = load("user");
+  const userData = loggedIn;
   const [open, setOpen] = useState(false);
+
+  function logOut() {
+    remove("user");
+    window.location = "/login";
+  }
+
   return (
     <>
       <Button
@@ -47,10 +27,10 @@ export default function Nav() {
         <CgMenu />
       </Button>
       <Collapse in={open}>
-        <nav id="collapse-nav">
-          <NavList>
+        <S.Nav id="collapse-nav">
+          <S.NavList>
             <li>
-              <NavBarLink
+              <S.NavBarLink
                 to="/"
                 onClick={() => setOpen(!open)}
                 aria-controls="collapse-nav"
@@ -58,10 +38,10 @@ export default function Nav() {
                 className="fs-4"
               >
                 HOME
-              </NavBarLink>
+              </S.NavBarLink>
             </li>
             <li>
-              <NavBarLink
+              <S.NavBarLink
                 to="/venues"
                 onClick={() => setOpen(!open)}
                 aria-controls="collapse-nav"
@@ -69,10 +49,10 @@ export default function Nav() {
                 className="fs-4"
               >
                 VENUES
-              </NavBarLink>
+              </S.NavBarLink>
             </li>
             <li>
-              <NavBarLink
+              <S.NavBarLink
                 to="/about"
                 onClick={() => setOpen(!open)}
                 aria-controls="collapse-nav"
@@ -80,20 +60,41 @@ export default function Nav() {
                 className="fs-4"
               >
                 ABOUT
-              </NavBarLink>
+              </S.NavBarLink>
             </li>
-          </NavList>
-          <NavBarLink className={"login"} to="/login">
-            <LogInButton
-              onClick={() => setOpen(!open)}
+            {userData ? (
+              <li>
+                <S.NavBarLink
+                  to={`/profile/` + userData.name}
+                  onClick={() => setOpen(!open)}
+                  aria-controls="collapse-nav"
+                  aria-expanded={open}
+                  className="fs-4"
+                >
+                  PROFILE
+                </S.NavBarLink>
+              </li>
+            ) : null}
+          </S.NavList>
+          {userData ? (
+            <S.NavBarLink className={"login"}>
+              <PrimaryButton onClick={logOut} className="mb-2">
+                LOG OUT
+              </PrimaryButton>
+            </S.NavBarLink>
+          ) : (
+            <S.NavBarLink
               aria-controls="collapse-nav"
-              aria-expanded={open}
-              className="mb-2"
+              aria-expanded={!open}
+              className={"login"}
+              to="/login"
             >
-              LOG IN
-            </LogInButton>
-          </NavBarLink>
-        </nav>
+              <PrimaryButton onClick={() => setOpen(!open)} className="mb-2">
+                LOG IN
+              </PrimaryButton>
+            </S.NavBarLink>
+          )}
+        </S.Nav>
       </Collapse>
     </>
   );
