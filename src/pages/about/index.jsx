@@ -1,78 +1,23 @@
 import React from "react";
 import { Container, Card, Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-
-const AboutHeadingContainer = styled.div`
-  width: 85%;
-  margin: 30px auto 0 auto;
-  font-weight: 100;
-`;
-
-const AboutHeading = styled.h1`
-  font-weight: 500;
-  margin-bottom: 0;
-`;
-
-export const BaseCard = styled(Card)`
-  background: none;
-  border: none;
-  width: 90%;
-  border-radius: 0%;
-  padding: 0;
-  margin-bottom: 40px;
-`;
-
-const BaseCardImg = styled(Card.Img)`
-  border-radius: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-export const HomeCardTitle = styled(Card.Title)`
-  text-align: center;
-  font-family: "Quicksand", sans-serif;
-  z-index: 1;
-  color: white;
-  position: absolute;
-  top: 42%;
-  width: 100%;
-`;
-
-const CardContainer = styled(Row)`
-  width: 100%;
-`;
-
-const CardLink = styled(Link)`
-  color: var(--color-primary);
-  text-decoration: none;
-  :hover {
-    color: var(--color-primary);
-  }
-`;
-
-const CardImg = styled(Card.Img)`
-  border-radius: 0;
-  border: solid 2px var(--color-tertiary);
-`;
-
-const CardTitle = styled(Card.Title)`
-  font-weight: 400;
-`;
+import {
+  MainHeading,
+  MainHeadingContainer,
+} from "../../components/commonStyles/headings";
+import * as S from "../../components/commonStyles/cards";
 
 export default function About() {
   return (
     <div className="about-page">
-      <AboutHeadingContainer>
-        <AboutHeading>About Us</AboutHeading>
-      </AboutHeadingContainer>
+      <MainHeadingContainer>
+        <MainHeading>About Us</MainHeading>
+      </MainHeadingContainer>
       <Container
         style={{ width: "85%", padding: "0" }}
         className="d-flex justify-content-center"
       >
         <Col xs={12} className="d-flex justify-content-center">
-          <CardContainer className="d-flex justify-content-center">
+          <Row className="d-flex justify-content-center w-100">
             <Col
               xs={12}
               sm={11}
@@ -82,8 +27,8 @@ export default function About() {
               className="d-flex justify-content-center"
               style={{ padding: "0" }}
             >
-              <BaseCard>
-                <CardImg
+              <S.BaseCard>
+                <S.CardImg
                   src="/images/beach-resort.jpg"
                   alt=""
                   className="mb-3"
@@ -101,7 +46,7 @@ export default function About() {
                   a platform where both travelers and venues could sign up and
                   start their adventure right away.
                 </Card.Text>
-              </BaseCard>
+              </S.BaseCard>
             </Col>
 
             <Col
@@ -113,8 +58,12 @@ export default function About() {
               className="d-flex justify-content-center"
               style={{ padding: "0" }}
             >
-              <BaseCard>
-                <CardImg src="/images/city-suite.jpg" alt="" className="mb-3" />
+              <S.BaseCard>
+                <S.CardImg
+                  src="/images/city-suite.jpg"
+                  alt=""
+                  className="mb-3"
+                />
                 <Card.Title>Our mission</Card.Title>
                 <Card.Text>
                   Holidaze was born out of a shared love for travel and a desire
@@ -134,9 +83,9 @@ export default function About() {
                   your vacation is everything you've dreamed of and more. So why
                   wait? Start planning your next adventure with Holidaze today!
                 </Card.Text>
-              </BaseCard>
+              </S.BaseCard>
             </Col>
-          </CardContainer>
+          </Row>
         </Col>
       </Container>
       ;
