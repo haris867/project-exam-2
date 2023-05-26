@@ -13,8 +13,8 @@ export default function About() {
         <MainHeading>About Us</MainHeading>
       </MainHeadingContainer>
       <Container
-        style={{ width: "85%", padding: "0" }}
-        className="d-flex justify-content-center"
+        style={{ width: "85%" }}
+        className="d-flex justify-content-center p-0"
       >
         <Col xs={12} className="d-flex justify-content-center">
           <Row className="d-flex justify-content-center w-100">
@@ -24,8 +24,7 @@ export default function About() {
               md={9}
               lg={6}
               xl={5}
-              className="d-flex justify-content-center"
-              style={{ padding: "0" }}
+              className="d-flex justify-content-center p-0"
             >
               <S.BaseCard>
                 <S.CardImg
@@ -55,8 +54,7 @@ export default function About() {
               md={9}
               lg={6}
               xl={5}
-              className="d-flex justify-content-center"
-              style={{ padding: "0" }}
+              className="d-flex justify-content-center p-0"
             >
               <S.BaseCard>
                 <S.CardImg
@@ -68,7 +66,7 @@ export default function About() {
                 <Card.Text>
                   Holidaze was born out of a shared love for travel and a desire
                   to make a difference in the way people book accommodations.
-                  Today we’re proud to present our vision to you and hope you
+                  Today we're proud to present our vision to you and hope you
                   enjoy it as much as we do. We believe that travel should be
                   accessible to everyone and that finding the perfect place to
                   stay should be easy and stress-free.

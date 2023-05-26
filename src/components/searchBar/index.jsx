@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Col, Card } from "react-bootstrap";
 import * as S from "../commonStyles/cards";
+import * as St from "./index.styles";
 import useGetData from "../../hooks/api/getData";
 
 export default function SearchBar() {
@@ -27,37 +28,24 @@ export default function SearchBar() {
   }
 
   if (isError) {
-    return <div>Error: {isError.message}</div>;
+    return <div>An error occured</div>;
   }
 
   return (
     <div>
       <div className="d-flex justify-content-center flex-wrap p-2 mb-3">
-        <input
+        <St.SearchInput
           className="m-2"
           type="url"
           placeholder="Search by name or location"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          style={{
-            height: "calc(2.5em + 0.7vw)",
-            flex: "1 0 100px",
-            maxWidth: "350px",
-            outline: "none",
-            fontFamily: "Quicksand",
-          }}
         />
       </div>
       {searchQuery.length > 0 && (
-        <div>
+        <St.SearchResultsContainer>
           Search results
-          <div
-            className="search-results d-flex justify-content-center mb-2 pt-2"
-            style={{
-              backgroundColor: "var(--color-primary)",
-              padding: "40px",
-            }}
-          >
+          <div className="search-results d-flex justify-content-center mb-2 pt-2">
             {filteredVenues.length > 0 ? (
               <div className="d-flex flex-wrap">
                 {filteredVenues.map((venue) => (
@@ -103,10 +91,10 @@ export default function SearchBar() {
                 ))}
               </div>
             ) : (
-              <div style={{ color: "white" }}>No results</div>
+              <St.NoResults style={{ color: "white" }}>No results</St.NoResults>
             )}
           </div>
-        </div>
+        </St.SearchResultsContainer>
       )}
     </div>
   );

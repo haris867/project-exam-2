@@ -6,6 +6,8 @@ import useGetData from "../../hooks/api/getData";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import { PrimaryButton } from "../commonStyles/buttons";
+import * as S from "../commonStyles/forms";
+import { CalendarForm } from "./index.styles";
 
 export default function BookingCalendar() {
   const url = "https://api.noroff.dev/api/v1/holidaze/venues";
@@ -128,24 +130,22 @@ export default function BookingCalendar() {
         />
       </div>
       <div className="form-container d-flex justify-content-center mt-3">
-        <form
+        <CalendarForm
           className="form-card my-login-modal d-flex flex-column"
           onSubmit={handleSubmit(onSubmit)}
-          style={{ width: "90%" }}
         >
           <div className="selected-dates px-3">
             <div className="date-from">{dateFrom}</div>
             <div className="date-to">{dateTo}</div>
           </div>
           <div className="d-flex align-items-center flex-column px-3">
-            <label
+            <S.FormLabel
               className="align-self-start mb-2 mx-0"
               htmlFor="guests"
-              style={{ fontSize: "calc(1.2rem + 0.5vw)" }}
             >
               Number of guests
-            </label>
-            <input
+            </S.FormLabel>
+            <S.FormInput
               className="w-100"
               type="number"
               placeholder="Number of guests"
@@ -154,19 +154,13 @@ export default function BookingCalendar() {
               max={100}
               pattern="^[0-9]*$"
               {...register("guests")}
-              style={{ height: "calc(2.5em + 0.7vw)" }}
             />
           </div>
           <div className="d-flex justify-content-center mt-3">
             <PrimaryButton>BOOK NOW</PrimaryButton>
           </div>
-        </form>
+        </CalendarForm>
       </div>
     </div>
   );
 }
-
-// excludeDateIntervals={data && data.bookings ? data.bookings.map((booking) => ({
-//     start: new Date(booking.dateFrom),
-//     end: new Date(booking.dateTo),
-//   })) : [{ start: subDays(new Date(), 5), end: subDays(new Date(), 5) }]}

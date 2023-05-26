@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import { useForm } from "react-hook-form";
 import useSendData from "../../hooks/api/sendData";
 import { PrimaryButton } from "../commonStyles/buttons";
+import * as S from "../commonStyles/forms";
 
 export default function CreateVenueForm() {
   const { register, handleSubmit, watch } = useForm();
@@ -71,25 +72,20 @@ export default function CreateVenueForm() {
   if (isError) {
     return (
       <div className="d-flex justify-content-center align-items-center mb-3">
-        Error: {isError.message}
+        An error occured
       </div>
     );
   }
 
   return (
-    <div
-      className="d-flex justify-content-center flex-column"
-      style={{ width: "100%" }}
-    >
+    <div className="d-flex justify-content-center flex-column w-100">
       <h1>Create venue</h1>
       <div className="error-message">{errorMessage}</div>
       <form
         className="form-card my-login-modal d-flex flex-column mb-2"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <label htmlFor="name" style={{ fontSize: "calc(1.2rem + 0.5vw)" }}>
-          Name
-        </label>
+        <S.FormLabel htmlFor="name">Name</S.FormLabel>
         <input
           type="text"
           placeholder="Venue name"
@@ -98,9 +94,9 @@ export default function CreateVenueForm() {
           {...register("name")}
         />
         <div className="sub-label d-flex">
-          <label htmlFor="media" style={{ fontSize: "calc(1.2rem + 0.5vw)" }}>
+          <S.FormLabel htmlFor="media">
             Image <p className="d-inline">(URL)</p>
-          </label>
+          </S.FormLabel>
         </div>
         {images.map((image, index) => (
           <input
@@ -130,13 +126,9 @@ export default function CreateVenueForm() {
             <p className="mx-2">Add image</p>
           </div>
         ) : null}
-        <label
-          className=" mb-2"
-          htmlFor="price"
-          style={{ fontSize: "calc(1.2rem + 0.5vw)" }}
-        >
+        <S.FormLabel className=" mb-2" htmlFor="price">
           Price
-        </label>
+        </S.FormLabel>
         <input
           type="number"
           placeholder="Price per day"
@@ -144,13 +136,9 @@ export default function CreateVenueForm() {
           min={0}
           {...register("price")}
         />
-        <label
-          className=" mb-2"
-          htmlFor="maxGuests"
-          style={{ fontSize: "calc(1.2rem + 0.5vw)" }}
-        >
+        <S.FormLabel className=" mb-2" htmlFor="maxGuests">
           Max guests
-        </label>
+        </S.FormLabel>
         <input
           type="number"
           placeholder="Max number of guests"
@@ -161,65 +149,45 @@ export default function CreateVenueForm() {
           {...register("maxGuests")}
         />
         <div className="d-flex justify-content-between">
-          <label htmlFor="wifi" style={{ fontSize: "calc(1.2rem + 0.5vw)" }}>
-            Wifi
-          </label>
-          <input
+          <S.FormLabel htmlFor="wifi">Wifi</S.FormLabel>
+          <S.FormCheckbox
             className="register-checkbox"
             type="checkbox"
             {...register("wifi")}
-            style={{ width: "calc(1.5em + 0.7vw)" }}
           />
         </div>
         <div className="d-flex justify-content-between">
-          <label
-            htmlFor="breakfast"
-            style={{ fontSize: "calc(1.2rem + 0.5vw)" }}
-          >
-            Breakfast
-          </label>
-          <input
+          <S.FormLabel htmlFor="breakfast">Breakfast</S.FormLabel>
+          <S.FormCheckbox
             className="register-checkbox"
             type="checkbox"
             {...register("breakfast")}
-            style={{ width: "calc(1.5em + 0.7vw)" }}
           />
         </div>
         <div className="d-flex justify-content-between">
-          <label htmlFor="parking" style={{ fontSize: "calc(1.2rem + 0.5vw)" }}>
-            Parking
-          </label>
-          <input
+          <S.FormLabel htmlFor="parking">Parking</S.FormLabel>
+          <S.FormCheckbox
             className="register-checkbox"
             type="checkbox"
             {...register("parking")}
-            style={{ width: "calc(1.5em + 0.7vw)" }}
           />
         </div>
         <div className="d-flex justify-content-between">
-          <label htmlFor="pets" style={{ fontSize: "calc(1.2rem + 0.5vw)" }}>
-            Pets
-          </label>
-          <input
+          <S.FormLabel htmlFor="pets">Pets</S.FormLabel>
+          <S.FormCheckbox
             className="register-checkbox"
             type="checkbox"
             {...register("pets")}
-            style={{ width: "calc(1.5em + 0.7vw)" }}
           />
         </div>
-        <label
-          className=" mb-2"
-          htmlFor="password"
-          style={{ fontSize: "calc(1.2rem + 0.5vw)" }}
-        >
+        <S.FormLabel className=" mb-2" htmlFor="password">
           Description
-        </label>
-        <textarea
+        </S.FormLabel>
+        <S.FormTextarea
           placeholder="Description"
           required={true}
           minLength="8"
           {...register("description")}
-          style={{ height: "calc(4.5em + 0.7vw)" }}
         />
         <PrimaryButton type="submit" className="mt-3">
           CREATE

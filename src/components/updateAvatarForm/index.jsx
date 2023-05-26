@@ -21,7 +21,7 @@ export default function UpdateAvatarForm() {
   }
 
   if (isError) {
-    return <div>Error: {isError.message}</div>;
+    return <div>An error occured</div>;
   }
 
   return (

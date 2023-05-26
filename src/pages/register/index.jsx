@@ -5,8 +5,8 @@ import RegisterForm from "../../components/registerForm";
 export default function Register() {
   return (
     <Container
-      className="d-flex flex-column justify-content-center"
-      style={{ width: "85%", padding: "0" }}
+      className="d-flex flex-column justify-content-center p-0"
+      style={{ width: "85%" }}
     >
       <RegisterForm />
     </Container>

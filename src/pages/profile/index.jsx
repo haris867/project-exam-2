@@ -38,20 +38,17 @@ export default function Profile() {
   }
 
   if (isError) {
-    return <div>Error: {isError.message}</div>;
+    return <div>An error occured</div>;
   }
 
   console.log(data.venues);
 
   return (
     <Container
-      className="d-flex flex-column justify-content-center"
-      style={{ width: "85%", padding: "0" }}
+      className="d-flex flex-column justify-content-center p-0"
+      style={{ width: "85%" }}
     >
-      <Row
-        className="d-flex align-self-center justify-content-center"
-        style={{ width: "100%" }}
-      >
+      <Row className="d-flex align-self-center justify-content-center w-100">
         <Col xs={12} sm={11} md={8} lg={7}>
           <Col
             className="d-flex align-items-center mb-2 mx-auto"
@@ -123,28 +120,36 @@ export default function Profile() {
                 </div>
               </Collapse>
             ) : null}
-            {data.venueManager && data.venues.length > 0 ? (
-              data.venues
-                .sort((a, b) => new Date(a.created) - new Date(b.created))
-                .reverse()
-                .map((venue) => (
-                  <St.BaseCard className="mb-3">
-                    <St.CardLink to={`/venue/${venue.id}`}>
-                      <Card.Text className="fs-4 mb-1">{venue.name}</Card.Text>
-                      <St.CardImg
-                        src={
-                          venue.media.length > 0
-                            ? venue.media[0]
-                            : "/images/beach-resort.jpg"
-                        }
-                        alt=""
-                      />
-                    </St.CardLink>
-                  </St.BaseCard>
-                ))
-            ) : (
-              <div>You have no venues</div>
-            )}
+            {data.venueManager ? (
+              data.venues && data.venues.length > 0 ? (
+                data.venues
+                  .sort((a, b) => new Date(a.created) - new Date(b.created))
+                  .reverse()
+                  .map((venue) => (
+                    <St.BaseCard className="mb-3">
+                      <St.CardLink to={`/venue/${venue.id}`}>
+                        <Card.Text className="fs-4 mb-1">
+                          {venue.name}
+                        </Card.Text>
+                        <St.CardImg
+                          src={
+                            venue.media.length > 0
+                              ? venue.media[0]
+                              : "/images/beach-resort.jpg"
+                          }
+                          alt=""
+                        />
+                      </St.CardLink>
+                    </St.BaseCard>
+                  ))
+              ) : isLoading ? (
+                <LoadingSpinner animation="border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </LoadingSpinner>
+              ) : (
+                <div>You have no venues</div>
+              )
+            ) : null}
             {loggedInUser.name === data.name ? (
               <div>
                 <h2

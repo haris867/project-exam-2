@@ -41,10 +41,7 @@ export default function RegisterForm() {
   }
 
   return (
-    <Row
-      className="d-flex align-content-center align-self-center flex-column justify-content-center"
-      style={{ width: "100%" }}
-    >
+    <Row className="d-flex align-content-center align-self-center flex-column justify-content-center w-100">
       <Col xs={12} sm={8} md={6} className="p-0">
         <MainHeading>Register</MainHeading>
       </Col>
@@ -54,10 +51,7 @@ export default function RegisterForm() {
         sm={8}
         md={6}
       >
-        <div
-          className="d-flex justify-content-center"
-          style={{ width: "100%" }}
-        >
+        <div className="d-flex justify-content-center w-100">
           <div className="error-message">{errorMessage}</div>
           <form
             className="my-login-modal d-flex flex-column"

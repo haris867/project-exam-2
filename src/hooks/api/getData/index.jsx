@@ -5,12 +5,14 @@ export default function useGetData(url, options = {}) {
   const [isFetchLoading, setIsFetchLoading] = useState(false);
   const [isFetchError, setIsFetchError] = useState(false);
 
+  const stringifiedOptions = JSON.stringify(options);
+
   useEffect(() => {
     async function getData() {
       try {
         setIsFetchLoading(true);
         setIsFetchError(false);
-        const fetchedData = await fetch(url, options);
+        const fetchedData = await fetch(url, JSON.parse(stringifiedOptions));
         const json = await fetchedData.json();
         setData(json);
       } catch (error) {
@@ -21,6 +23,6 @@ export default function useGetData(url, options = {}) {
       }
     }
     getData();
-  }, [url, options]);
+  }, [url, stringifiedOptions]);
   return { data, isFetchLoading, isFetchError };
 }

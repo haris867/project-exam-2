@@ -29,7 +29,7 @@ export default function Venues() {
   }
 
   if (isError) {
-    return <div>Error: {isError.message}</div>;
+    return <div>An error occured</div>;
   }
 
   return (
@@ -49,8 +49,8 @@ export default function Venues() {
         />
       </MainHeadingContainer>
       <Container
-        style={{ width: "85%", padding: "0" }}
-        className="d-flex justify-content-center mt-3"
+        style={{ width: "85%" }}
+        className="d-flex justify-content-center mt-3 p-0"
       >
         <Col
           xs={12}
@@ -58,7 +58,7 @@ export default function Venues() {
         >
           <Row className="d-flex justify-content-center w-100">
             <Collapse in={open}>
-              <Col id="search-form" xs={12} style={{ padding: "0" }}>
+              <Col id="search-form" xs={12} className="p-0">
                 <SearchBar />
               </Col>
             </Collapse>
@@ -68,8 +68,7 @@ export default function Venues() {
                 sm={10}
                 md={6}
                 lg={4}
-                className="d-flex justify-content-center"
-                style={{ padding: "0" }}
+                className="d-flex justify-content-center p-0"
                 data-id={venue.id}
               >
                 <S.BaseCard>

@@ -23,4 +23,5 @@ export const CardImg = styled(Card.Img)`
   border-radius: 0;
   border: solid 2px var(--color-tertiary);
   aspect-ratio: 3/2;
+  object-fit: cover;
 `;

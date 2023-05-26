@@ -1,5 +1,5 @@
 import Menu from "../../nav";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
@@ -24,18 +24,6 @@ function Header() {
           </svg>
         </NavLink>
       </div>
-      <Link
-        to="/profile"
-        style={{
-          zIndex: "2",
-          fontSize: "calc(2em + 1vw)",
-          color: "var(--color-primary)",
-          position: "absolute",
-          right: "calc(50px + 10vw)",
-          display: "flex",
-          alignItems: "center",
-        }}
-      ></Link>
       <Menu />
     </header>
   );

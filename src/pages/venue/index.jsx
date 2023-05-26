@@ -50,21 +50,16 @@ export default function VenuePage() {
   }
   if (isError || isFetchError) {
     return (
-      <div>Error: {isError.message}</div> || (
-        <div>Error: {isFetchError.message}</div>
-      )
+      <div>An error occured</div> || <div>Error: {isFetchError.message}</div>
     );
   }
 
   return (
     <Container
-      className="d-flex flex-column justify-content-center"
-      style={{ width: "85%", padding: "0" }}
+      className="d-flex flex-column justify-content-center p-0"
+      style={{ width: "85%" }}
     >
-      <Row
-        className="d-flex align-content-center align-self-center flex-column justify-content-center"
-        style={{ width: "100%" }}
-      >
+      <Row className="d-flex align-content-center align-self-center flex-column justify-content-center w-100">
         <Col xs={12} sm={8} md={6} lg={6} xl={5} className="p-0">
           <MainHeading className="mb-3 fs-3">{data.name}</MainHeading>
         </Col>
@@ -106,10 +101,10 @@ export default function VenuePage() {
                 {data.price}$ <span className="fs-6">/day</span>
               </Card.Text>
             </div>
-            {loggedInUser &&
-            data.owner &&
-            loggedInUser.name !== data.owner.name ? (
-              <BookingCalendar />
+            {loggedInUser && data.owner ? (
+              loggedInUser.name !== data.owner.name ? (
+                <BookingCalendar />
+              ) : null
             ) : (
               <div className="text-center">
                 <Link to="/login">
@@ -130,7 +125,7 @@ export default function VenuePage() {
                   VIEW BOOKINGS
                 </PrimaryButton>
                 <Collapse in={openBookings}>
-                  <Col id="bookings-list" xs={12} style={{ padding: "0" }}>
+                  <Col id="bookings-list" xs={12} className="p-0">
                     {data.bookings && data.bookings.length > 0 ? (
                       <div>
                         {data.bookings.map((booking, index) => {
@@ -240,7 +235,6 @@ export default function VenuePage() {
                       : null
                   }
                   className="d-flex align-items-center text-decoration-none"
-                  style={{}}
                 >
                   {data.owner && data.owner.avatar ? (
                     <img
@@ -294,7 +288,7 @@ export default function VenuePage() {
                     EDIT
                   </SecondaryButton>
                   <Collapse in={open}>
-                    <Col id="edit-form" xs={12} style={{ padding: "0" }}>
+                    <Col id="edit-form" xs={12} className="p-0">
                       <EditForm />
                     </Col>
                   </Collapse>
@@ -310,7 +304,8 @@ export default function VenuePage() {
                     <Collapse in={openDelete}>
                       <div
                         id="delete-form"
-                        style={{ padding: "0", maxWidth: "300px" }}
+                        className="p-0"
+                        style={{ maxWidth: "300px" }}
                       >
                         <div
                           className="form-card text-center"

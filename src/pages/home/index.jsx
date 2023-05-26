@@ -18,8 +18,8 @@ export default function Home() {
         <S.HomeSubHeading>For your next adventure.</S.HomeSubHeading>
       </MainHeadingContainer>
       <Container
-        style={{ width: "85%", padding: "0" }}
-        className="d-flex justify-content-center"
+        style={{ width: "85%" }}
+        className="d-flex justify-content-center p-0"
       >
         <Col xs={12} className="d-flex justify-content-center">
           <Row className="d-flex justify-content-center w-100">
@@ -28,8 +28,7 @@ export default function Home() {
               sm={11}
               md={6}
               lg={5}
-              className="d-flex justify-content-center"
-              style={{ padding: "0" }}
+              className="d-flex justify-content-center p-0"
             >
               <BaseCard>
                 <Link to={`/venues`}>
@@ -44,8 +43,7 @@ export default function Home() {
                 sm={11}
                 md={6}
                 lg={5}
-                className="d-flex justify-content-center"
-                style={{ padding: "0" }}
+                className="d-flex justify-content-center p-0"
               >
                 <BaseCard>
                   <Link to={`/login`}>
@@ -61,8 +59,7 @@ export default function Home() {
                 sm={11}
                 md={6}
                 lg={5}
-                className="d-flex justify-content-center"
-                style={{ padding: "0" }}
+                className="d-flex justify-content-center p-0"
               >
                 <BaseCard>
                   <Link to={`/register`}>
@@ -77,8 +74,7 @@ export default function Home() {
               sm={11}
               md={6}
               lg={5}
-              className="d-flex justify-content-center"
-              style={{ padding: "0" }}
+              className="d-flex justify-content-center p-0"
             >
               <BaseCard>
                 <Link to={`/about`}>
