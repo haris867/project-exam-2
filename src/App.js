@@ -11,11 +11,11 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/venues" element={<Venues />} />
-          <Route path="/venue" element={<Venue />} />
+          <Route path="/venue/:id" element={<Venue />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/:name" element={<Profile />} />
         </Route>
       </Routes>
     </div>
