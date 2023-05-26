@@ -14,6 +14,8 @@ import { LoadingSpinner } from "../../components/commonStyles/loadingSpinner";
 import { PrimaryButton } from "../../components/commonStyles/buttons";
 import { SecondaryButton } from "../../components/commonStyles/buttons";
 import { MainHeading } from "../../components/commonStyles/headings";
+import { Helmet } from "react-helmet";
+
 import * as S from "./index.styles";
 
 export default function VenuePage() {
@@ -49,9 +51,7 @@ export default function VenuePage() {
     );
   }
   if (isError || isFetchError) {
-    return (
-      <div>An error occured</div> || <div>Error: {isFetchError.message}</div>
-    );
+    return <div>An error occured</div>;
   }
 
   return (
@@ -59,6 +59,11 @@ export default function VenuePage() {
       className="d-flex flex-column justify-content-center p-0"
       style={{ width: "85%" }}
     >
+      <Helmet>
+        <title>
+          {data && data.name ? `Holidaze | ${data.name}` : "Holidaze"}
+        </title>
+      </Helmet>
       <Row className="d-flex align-content-center align-self-center flex-column justify-content-center w-100">
         <Col xs={12} sm={8} md={6} lg={6} xl={5} className="p-0">
           <MainHeading className="mb-3 fs-3">{data.name}</MainHeading>
