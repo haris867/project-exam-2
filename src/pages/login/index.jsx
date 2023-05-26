@@ -1,87 +1,14 @@
 import React from "react";
-import { Container, Card, Row, Col } from "react-bootstrap";
-import { Route, NavLink } from "react-router-dom";
-import styled from "styled-components";
-import { useForm } from "react-hook-form";
-import { LogInButton } from "../../components/nav";
-
-export const LoginHeading = styled.h1`
-  font-weight: 500;
-  margin-bottom: 40px;
-`;
+import { Container } from "react-bootstrap";
+import LoginForm from "../../components/loginForm";
 
 export default function Login() {
-  const { register, handleSubmit } = useForm();
-
-  function onSubmit(data) {
-    console.log(data);
-  }
   return (
     <Container
       className="d-flex flex-column justify-content-center"
       style={{ width: "85%", padding: "0" }}
     >
-      <Row
-        className="d-flex align-content-center align-self-center flex-column justify-content-center"
-        style={{ width: "100%" }}
-      >
-        <Col xs={12} sm={8} md={6} className="p-0">
-          <LoginHeading>Log in</LoginHeading>
-        </Col>
-        <Col
-          className="form-card d-flex justify-content-center"
-          xs={12}
-          sm={8}
-          md={6}
-        >
-          <div
-            className="d-flex justify-content-center"
-            style={{ width: "100%" }}
-          >
-            <form
-              className="my-login-modal d-flex flex-column"
-              onSubmit={handleSubmit(onSubmit)}
-            >
-              {" "}
-              <label
-                className=" mb-2"
-                htmlFor=""
-                style={{ fontSize: "calc(1.2rem + 0.5vw)" }}
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                placeholder="Your email"
-                {...register("email")}
-                style={{ height: "calc(2.5em + 0.7vw)" }}
-              />
-              <label
-                className=" mb-2"
-                htmlFor=""
-                style={{ fontSize: "calc(1.2rem + 0.5vw)" }}
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                placeholder="Your password"
-                {...register("password")}
-                style={{ height: "calc(2.5em + 0.7vw)" }}
-              />
-              <LogInButton type="submit" className="mt-3">
-                LOG IN
-              </LogInButton>
-              <NavLink to="/register" className="form-link1 align-self-center">
-                <div>
-                  <p className="mt-3 mb-0">Not registered?</p>
-                  <p className="fw-bold">SIGN UP NOW!</p>
-                </div>
-              </NavLink>
-            </form>
-          </div>
-        </Col>
-      </Row>
+      <LoginForm />
     </Container>
   );
 }
