@@ -1,4 +1,3 @@
-import { CgProfile } from "react-icons/cg";
 import Menu from "../../nav";
 import { NavLink, Link } from "react-router-dom";
 
@@ -36,9 +35,7 @@ function Header() {
           display: "flex",
           alignItems: "center",
         }}
-      >
-        <CgProfile />
-      </Link>
+      ></Link>
       <Menu />
     </header>
   );
