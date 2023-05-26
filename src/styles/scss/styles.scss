@@ -8,16 +8,18 @@ body {
   background-color: var(--color-secondary);
 }
 
+//  Check
 .layout-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+//  Check
 
 .layout-outlet {
   flex: 1;
 }
-
+//  Check
 h1 {
   color: var(--color-primary);
 }
@@ -25,6 +27,8 @@ h1 {
 .active {
   font-weight: 900;
 }
+
+//  Check
 
 header .btn {
   background: none;
@@ -34,22 +38,26 @@ header .btn {
   font-size: 1.8em;
 }
 
+//  Check
+
 header .btn:hover {
   color: var(--color-primary);
   background: none;
 }
 
-nav {
-  position: absolute;
-  right: 25px;
-  top: 117px;
-  font-family: "Roboto", sans-serif;
-  z-index: 1;
-  background: var(--color-secondary);
-  display: none;
-  text-align: center;
-  border: 3px solid var(--color-primary);
-}
+// nav {
+//   position: absolute;
+//   right: 25px;
+//   top: 117px;
+//   font-family: "Roboto", sans-serif;
+//   z-index: 1;
+//   background: var(--color-secondary);
+//   display: none;
+//   text-align: center;
+//   border: 3px solid var(--color-primary);
+// }
+
+//  Check
 
 li {
   margin: 10px 0;
@@ -83,6 +91,8 @@ li {
   -webkit-text-stroke: 2px var(--color-primary);
 }
 
+//  Check
+
 header {
   width: 85%;
   margin: 0 auto;
@@ -97,6 +107,8 @@ header {
   width: 170px;
 }
 
+//  Check
+
 footer {
   z-index: 2;
   bottom: 0;
@@ -109,6 +121,8 @@ footer {
   align-items: center;
 }
 
+//  Check
+
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -117,12 +131,14 @@ footer {
   height: 100%;
 }
 
+//  Check
 .footer-copyright {
   font-family: "Quicksand", sans-serif;
   font-size: 1em;
   width: 33.33%;
 }
 
+//  Check
 .footer-logo-container {
   display: flex;
   justify-content: center;
@@ -197,6 +213,14 @@ footer a:hover {
   font-family: "Quicksand", sans-serif;
   height: 2.5em;
 }
+.my-login-modal textarea {
+  margin: 0 20px 10px 20px;
+  outline: none;
+  border: 1px solid var(--color-primary);
+  padding: 4px 4px;
+  font-family: "Quicksand", sans-serif;
+  height: 2.5em;
+}
 
 .my-login-modal label {
   font-size: 1.2em;
@@ -217,6 +241,14 @@ form {
   width: 100%;
 }
 
+.register-checkbox {
+  width: 30px !important;
+  &:checked {
+    background-color: red !important;
+    color: red !important;
+  }
+}
+
 .form-link1 {
   color: var(--color-primary);
   text-decoration: none;
@@ -228,18 +260,20 @@ form {
 }
 
 // CALENDAR turn into CSS Module
+//  Check
 
-// .calendar-container > div {
-//   width: 100%;
-//   display: flex;
-//   justify-content: center;
-// }
+.calendar-container > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 .react-datepicker {
   background-color: var(--color-primary) !important;
   width: 100% !important;
   display: flex !important;
   justify-content: center !important;
+  max-width: 350px !important;
 }
 
 .react-datepicker__header {
@@ -293,6 +327,11 @@ form {
   font-size: calc(1em + 0.5vw) !important;
   margin: calc(0.2em + 0.2vw) !important;
 
+  // &--keyboard-selected {
+  //   background-color: var(--color-primary) !important;
+  //   color: white !important;
+  // }
+
   &--in-range {
     background-color: var(--color-secondary) !important;
     color: var(--color-primary) !important;
@@ -309,12 +348,15 @@ form {
     background-color: var(--color-secondary) !important;
     color: var(--color-primary) !important;
   }
+
   &--selecting-range-start {
     color: var(--color-primary) !important;
     background-color: var(--color-secondary) !important;
   }
   &--disabled {
     color: red !important;
+    background-color: var(--color-primary) !important;
+
     &:hover {
       color: red !important;
       background-color: var(--color-primary) !important;
@@ -345,10 +387,6 @@ form {
   .about-page .card-text {
     font-size: 1.2em;
   }
-
-  .collapsing {
-    transition: none;
-  }
 }
 
 @media (min-width: 992px) {
@@ -358,9 +396,9 @@ form {
     font-size: 1.6em;
   }
 
-  .show {
-    display: block;
-  }
+  // .show {
+  //   display: block;
+  // }
   header {
     display: flex;
     justify-content: flex-start;
@@ -378,26 +416,26 @@ form {
 
   nav {
     display: flex !important;
-    flex: 1;
-    justify-content: space-between;
-    max-width: 80%;
-    align-items: baseline;
-    position: relative;
-    right: 0;
-    top: 0;
-    left: 8%;
-    background-color: var(--color-secondary);
-    border: none;
+    flex: 1 !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    position: relative !important;
+    right: 0 !important;
+    top: 0 !important;
+    background-color: var(--color-secondary) !important;
+    border: none !important;
   }
 
   .login {
-    margin-right: 10%;
+    float: right;
+    margin-right: 0 !important;
   }
 
   nav ul {
     display: flex;
     border: none;
     padding: 0;
+    margin-left: 30px;
   }
   .dropdown {
     display: block;
