@@ -9,6 +9,7 @@ import UpdateAvatarForm from "../../components/updateAvatarForm";
 import { load } from "../../storage";
 import { LoadingSpinner } from "../../components/commonStyles/loadingSpinner";
 import * as S from "./index.styles";
+import { MainHeading } from "../../components/commonStyles/headings";
 
 export default function Profile() {
   const [open, setOpen] = useState(false);
@@ -73,7 +74,7 @@ export default function Profile() {
                 </S.UpdateAvatarButton>
               ) : null}
             </div>
-            <h1 className="mb-5 fw-normal fs-2">{data.name}</h1>
+            <MainHeading className="fs-2">{data.name}</MainHeading>
           </Col>
           <Collapse in={open}>
             <Col id="update-avatar-form" xs={12}>

@@ -9,4 +9,5 @@ export const MainHeadingContainer = styled.div`
 export const MainHeading = styled.h1`
   font-weight: 500;
   margin-bottom: 40px;
+  color: var(--color-primary);
 `;

@@ -82,7 +82,7 @@ export default function CreateVenueForm() {
       <h2 className="fs-3 m-0 primary-color fw-normal mb-2">Create venue</h2>
       <div className="error-message">{errorMessage}</div>
       <form
-        className="form-card my-login-modal d-flex flex-column mb-2"
+        className="form-card my-login-modal d-flex flex-column mb-2 primary-color"
         onSubmit={handleSubmit(onSubmit)}
       >
         <S.FormLabel htmlFor="name">Name</S.FormLabel>

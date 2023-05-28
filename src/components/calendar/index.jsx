@@ -132,7 +132,7 @@ export default function BookingCalendar() {
 
       <div className="form-container d-flex justify-content-center mt-3">
         <CalendarForm
-          className="form-card my-login-modal d-flex flex-column"
+          className="form-card my-login-modal d-flex flex-column primary-color"
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="selected-dates px-3">

@@ -54,7 +54,7 @@ export default function RegisterForm() {
         <div className="d-flex justify-content-center w-100">
           <div className="error-message">{errorMessage}</div>
           <form
-            className="my-login-modal d-flex flex-column"
+            className="my-login-modal d-flex flex-column primary-color w-100"
             onSubmit={handleSubmit(onSubmit)}
           >
             <S.FormLabel htmlFor="name">Name</S.FormLabel>
@@ -112,7 +112,7 @@ export default function RegisterForm() {
             </PrimaryButton>
             <NavLink
               to="/login"
-              className="form-link1 align-self-center text-center"
+              className="login-text text-decoration-none primary-color align-self-center text-center"
             >
               <div>
                 <p className="mt-3 mb-0">Already registered?</p>

@@ -8,20 +8,14 @@ body {
   background-color: var(--color-secondary);
 }
 
-//  Check
 .layout-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-//  Check
 
 .layout-outlet {
   flex: 1;
-}
-//  Check
-h1 {
-  color: var(--color-primary);
 }
 
 .active {
@@ -48,8 +42,6 @@ h1 {
   color: var(--color-primary);
 }
 
-//  Check
-
 header .btn {
   background: none;
   color: var(--color-primary);
@@ -58,26 +50,10 @@ header .btn {
   font-size: 1.8em;
 }
 
-//  Check
-
 header .btn:hover {
   color: var(--color-primary);
   background: none;
 }
-
-// nav {
-//   position: absolute;
-//   right: 25px;
-//   top: 117px;
-//   font-family: "Roboto", sans-serif;
-//   z-index: 1;
-//   background: var(--color-secondary);
-//   display: none;
-//   text-align: center;
-//   border: 3px solid var(--color-primary);
-// }
-
-//  Check
 
 li {
   margin: 10px 0;
@@ -104,14 +80,10 @@ li {
   margin-bottom: 20px;
 }
 
-// LOGO
-
 .logo-z {
   color: var(--color-tertiary);
   -webkit-text-stroke: 2px var(--color-primary);
 }
-
-//  Check
 
 header {
   width: 85%;
@@ -127,8 +99,6 @@ header {
   width: 170px;
 }
 
-//  Check
-
 footer {
   z-index: 2;
   bottom: 0;
@@ -141,8 +111,6 @@ footer {
   align-items: center;
 }
 
-//  Check
-
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -150,15 +118,12 @@ footer {
   width: 85%;
   height: 100%;
 }
-
-//  Check
 .footer-copyright {
   font-family: "Quicksand", sans-serif;
   font-size: 1em;
   width: 33.33%;
 }
 
-//  Check
 .footer-logo-container {
   display: flex;
   justify-content: center;
@@ -199,8 +164,6 @@ footer a:hover {
   text-decoration: red line-through;
 }
 
-// ABOUT PAGE
-
 .about-page .card-img {
   filter: none;
 }
@@ -220,10 +183,6 @@ footer a:hover {
 }
 
 // LOGIN
-
-.my-login-modal {
-  color: var(--color-primary);
-}
 
 .my-login-modal input {
   margin: 0 20px 10px 20px;
@@ -257,10 +216,6 @@ footer a:hover {
   border-radius: 10px;
 }
 
-form {
-  width: 100%;
-}
-
 .register-checkbox {
   width: 30px !important;
   &:checked {
@@ -269,18 +224,10 @@ form {
   }
 }
 
-.form-link1 {
+.login-text:hover {
   color: var(--color-primary);
-  text-decoration: none;
+  text-decoration: underline !important;
 }
-
-.form-link1:hover {
-  color: var(--color-primary);
-  text-decoration: underline;
-}
-
-// CALENDAR turn into CSS Module
-//  Check
 
 .calendar-container > div {
   width: 100%;
@@ -347,11 +294,6 @@ form {
   font-size: calc(1em + 0.5vw) !important;
   margin: calc(0.2em + 0.2vw) !important;
 
-  // &--keyboard-selected {
-  //   background-color: var(--color-primary) !important;
-  //   color: white !important;
-  // }
-
   &--in-range {
     background-color: var(--color-secondary) !important;
     color: var(--color-primary) !important;
@@ -399,8 +341,6 @@ form {
     font-size: 1.1em;
   }
 
-  // ABOUT PAGE
-
   .about-page .card-title {
     font-size: 1.6em;
   }
@@ -410,15 +350,9 @@ form {
 }
 
 @media (min-width: 992px) {
-  // ABOUT PAGE
-
   .about-page .card-title {
     font-size: 1.6em;
   }
-
-  // .show {
-  //   display: block;
-  // }
   header {
     display: flex;
     justify-content: flex-start;

@@ -91,7 +91,7 @@ export default function EditForm() {
 
   return (
     <form
-      className="form-card my-login-modal d-flex flex-column mb-3"
+      className="form-card my-login-modal d-flex flex-column mb-3 color-primary"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="message">{errorMessage}</div>

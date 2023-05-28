@@ -57,7 +57,7 @@ export default function LoginForm() {
         <div className="d-flex justify-content-center w-100">
           <div className="error-message">{errorMessage}</div>
           <form
-            className="my-login-modal d-flex flex-column"
+            className="my-login-modal d-flex flex-column primary-color"
             onSubmit={handleSubmit(onSubmit)}
           >
             {" "}
