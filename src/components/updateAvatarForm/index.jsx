@@ -13,7 +13,7 @@ export default function UpdateAvatarForm() {
   const { sendData, isLoading, isError } = useSendData(url);
 
   async function onUpdateSubmit(data) {
-    const response = await sendData(data, url, "PUT");
+    await sendData(data, url, "PUT");
     window.location.reload();
   }
 
