@@ -3,17 +3,16 @@ import { useForm } from "react-hook-form";
 import useSendData from "../../hooks/api/sendData";
 import { PrimaryButton } from "../commonStyles/buttons";
 import * as S from "../commonStyles/forms";
+import { baseUrl } from "../../utils/constants";
 
 export default function CreateVenueForm() {
   const { register, handleSubmit, watch } = useForm();
-  const url = "https://api.noroff.dev/api/v1/holidaze/venues";
+  const url = baseUrl + `venues`;
 
   const { sendData, isLoading, isError } = useSendData(url);
   const [errorMessage, setErrorMessage] = useState(null);
 
   const [images, setImages] = useState([""]);
-
-  console.log(images);
 
   const addImageInput = () => {
     if (images.length < 8) {
@@ -22,12 +21,10 @@ export default function CreateVenueForm() {
   };
 
   const watchImages = watch("media", [""]);
-  console.log(watchImages);
 
   async function onSubmit(formData) {
     const filteredImages = watchImages.filter((url) => url && url !== "");
 
-    console.log(filteredImages);
     const convertedData = {
       ...formData,
       price: parseInt(formData.price),
@@ -46,10 +43,7 @@ export default function CreateVenueForm() {
     delete convertedData.parking;
     delete convertedData.pets;
 
-    console.log(convertedData);
     const result = await sendData(convertedData, url, "POST");
-
-    console.log(result);
 
     if (result.errors && result.errors.length > 0) {
       setErrorMessage(result.errors[0].message);

@@ -32,7 +32,6 @@ export default function useSendData() {
       result = await response.json();
     } catch (error) {
       setIsError(true);
-      console.log({ error: true, message: error.message });
     } finally {
       setIsLoading(false);
     }

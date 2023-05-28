@@ -6,10 +6,11 @@ import useSendData from "../../hooks/api/sendData";
 import { useState } from "react";
 import { PrimaryButton } from "../commonStyles/buttons";
 import { MainHeading } from "../commonStyles/headings";
+import { baseUrl } from "../../utils/constants";
 
 export default function RegisterForm() {
   const { register, handleSubmit } = useForm();
-  const url = "https://api.noroff.dev/api/v1/holidaze/auth/register";
+  const url = baseUrl + `auth/register`;
 
   const { sendData, isLoading, isError } = useSendData(url);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -17,14 +18,13 @@ export default function RegisterForm() {
   async function onSubmit(data) {
     const result = sendData(data, url, "POST");
 
-    console.log(result);
-
     if (result.errors && result.errors.length > 0) {
       setErrorMessage(result.errors[0].message);
-      console.log(result.errors[0]);
     } else {
       setErrorMessage(null);
-      window.location.href = "/login";
+      // setTimeout(() => {
+      //   window.location.href = "/login";
+      // }, 2000);
     }
   }
 
@@ -45,6 +45,7 @@ export default function RegisterForm() {
       <Col xs={12} sm={8} md={6} className="p-0">
         <MainHeading>Register</MainHeading>
       </Col>
+      <div className="error-message">{errorMessage}</div>
       <Col
         className="form-card d-flex justify-content-center"
         xs={12}
@@ -52,7 +53,6 @@ export default function RegisterForm() {
         md={6}
       >
         <div className="d-flex justify-content-center w-100">
-          <div className="error-message">{errorMessage}</div>
           <form
             className="my-login-modal d-flex flex-column primary-color w-100"
             onSubmit={handleSubmit(onSubmit)}
@@ -67,14 +67,14 @@ export default function RegisterForm() {
               {...register("name")}
             />
             <div className="sub-label d-flex">
-              <S.FormLabel htmlFor="avatarUrl">
+              <S.FormLabel htmlFor="avatar">
                 Avatar <p className="d-inline">(image URL)</p>
               </S.FormLabel>
             </div>
             <S.FormInput
               type="url"
               placeholder="Avatar image URL"
-              {...register("avatarUrl")}
+              {...register("avatar")}
             />{" "}
             <S.FormLabel className=" mb-2" htmlFor="email">
               Email

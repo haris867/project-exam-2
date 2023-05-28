@@ -6,7 +6,7 @@ export const Nav = styled.nav`
   right: 25px;
   top: 117px;
   font-family: "Roboto", sans-serif;
-  z-index: 1;
+  z-index: 2;
   background: var(--color-secondary);
   text-align: center;
   border: 3px solid var(--color-primary);

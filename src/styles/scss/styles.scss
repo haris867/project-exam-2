@@ -27,11 +27,11 @@ body {
 }
 
 .w-85 {
-  width: 85%;
+  width: 85% !important;
 }
 
 .w-90 {
-  width: 90%;
+  width: 90% !important;
 }
 
 .cursor-pointer {
@@ -39,7 +39,7 @@ body {
 }
 
 .primary-color {
-  color: var(--color-primary);
+  color: var(--color-primary) !important;
 }
 
 header .btn {

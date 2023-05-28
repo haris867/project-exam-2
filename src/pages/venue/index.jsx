@@ -16,26 +16,26 @@ import { SecondaryButton } from "../../components/commonStyles/buttons";
 import { MainHeading } from "../../components/commonStyles/headings";
 import { Helmet } from "react-helmet";
 import * as S from "./index.styles";
+import { baseUrl } from "../../utils/constants";
 
 export default function VenuePage() {
   const [open, setOpen] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
   const [openBookings, setOpenBookings] = useState(false);
 
-  const url = "https://api.noroff.dev/api/v1/holidaze/venues";
+  const url = baseUrl + `venues`;
 
   let { id } = useParams();
   const { data, isFetchLoading, isFetchError } = useGetData(
     url + `/${id}?_owner=true&_bookings=true`
   );
 
-  console.log(data);
   const { sendData, isLoading, isError } = useSendData();
 
   const loggedInUser = load("user");
 
   function deleteVenue() {
-    const url = `https://api.noroff.dev/api/v1/holidaze/venues/${id}`;
+    const url = baseUrl + `venues/${id}`;
     sendData("", url, "DELETE");
     setTimeout(() => {
       window.location.href = `/profile/${loggedInUser.name}`;

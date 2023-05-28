@@ -3,15 +3,14 @@ import { Col, Card } from "react-bootstrap";
 import * as S from "../commonStyles/cards";
 import * as St from "./index.styles";
 import useGetData from "../../hooks/api/getData";
+import { baseUrl } from "../../utils/constants";
 
 export default function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const url = "https://api.noroff.dev/api/v1/holidaze/venues";
+  const url = baseUrl + `venues`;
 
   const { data, isLoading, isError } = useGetData(url);
-
-  console.log(data);
 
   const filteredVenues = data.filter(
     (venue) =>

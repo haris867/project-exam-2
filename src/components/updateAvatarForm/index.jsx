@@ -3,16 +3,17 @@ import { useForm } from "react-hook-form";
 import useSendData from "../../hooks/api/sendData";
 import { PrimaryButton } from "../commonStyles/buttons";
 import * as S from "./index.styles";
+import { useParams } from "react-router-dom";
+import { baseUrl } from "../../utils/constants";
 
 export default function UpdateAvatarForm() {
   const { register, handleSubmit } = useForm();
-  const url =
-    "https://api.noroff.dev/api/v1/holidaze/profiles/TestingBoss/media";
+  let { name } = useParams();
+  const url = baseUrl + `profiles/${name}/media`;
   const { sendData, isLoading, isError } = useSendData(url);
 
   async function onUpdateSubmit(data) {
     const response = await sendData(data, url, "PUT");
-    console.log(response);
     window.location.reload();
   }
 

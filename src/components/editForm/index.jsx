@@ -5,9 +5,10 @@ import useGetData from "../../hooks/api/getData";
 import useSendData from "../../hooks/api/sendData";
 import { useState, useEffect } from "react";
 import { PrimaryButton } from "../commonStyles/buttons";
+import { baseUrl } from "../../utils/constants";
 
 export default function EditForm() {
-  const url = "https://api.noroff.dev/api/v1/holidaze/venues";
+  const url = baseUrl + `venues`;
 
   let { id } = useParams();
   const { data, isLoading, isError } = useGetData(url + `/${id}`);
@@ -28,7 +29,6 @@ export default function EditForm() {
   }, [data]);
 
   const watchImages = watch("media", [""]);
-  console.log(watchImages);
 
   const addImageInput = () => {
     if (images.length < 8) {
@@ -38,8 +38,6 @@ export default function EditForm() {
 
   function onSubmit(formData) {
     const filteredImages = watchImages.filter((url) => url && url !== "");
-
-    console.log(filteredImages);
 
     const convertedData = {
       ...formData,
@@ -59,11 +57,8 @@ export default function EditForm() {
     delete convertedData.parking;
     delete convertedData.pets;
 
-    console.log(convertedData);
-
     const result = sendData(convertedData, url + `/${id}`, "PUT");
     if (result.errors && result.errors.length > 0) {
-      console.log(result.errors[0]);
       setErrorMessage(result.errors[0].message);
     } else {
       setErrorMessage(null);
@@ -91,7 +86,7 @@ export default function EditForm() {
 
   return (
     <form
-      className="form-card my-login-modal d-flex flex-column mb-3 color-primary"
+      className="form-card my-login-modal d-flex flex-column mb-3 primary-color"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="message">{errorMessage}</div>

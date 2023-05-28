@@ -8,9 +8,10 @@ import { useForm } from "react-hook-form";
 import { PrimaryButton } from "../commonStyles/buttons";
 import * as S from "../commonStyles/forms";
 import { CalendarForm } from "./index.styles";
+import { baseUrl } from "../../utils/constants";
 
 export default function BookingCalendar() {
-  const url = "https://api.noroff.dev/api/v1/holidaze/venues";
+  const url = baseUrl + `venues`;
   const { register, handleSubmit } = useForm();
 
   let { id } = useParams();
@@ -68,7 +69,6 @@ export default function BookingCalendar() {
   };
 
   async function onSubmit(data) {
-    console.log(data);
     const convertedData = {
       ...data,
       dateFrom: startDate,
@@ -76,14 +76,12 @@ export default function BookingCalendar() {
       guests: parseInt(data.guests),
       venueId: id,
     };
-    console.log(convertedData);
 
-    const url = "https://api.noroff.dev/api/v1/holidaze/bookings";
+    const url = baseUrl + `bookings`;
 
     const result = await sendData(convertedData, url, "POST");
 
     if (result.errors && result.errors.length > 0) {
-      console.log(result.errors[0]);
       setErrorMessage(result.errors[0].message);
     } else {
       setErrorMessage(null);

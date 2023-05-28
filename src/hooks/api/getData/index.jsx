@@ -16,7 +16,6 @@ export default function useGetData(url, options = {}) {
         const json = await fetchedData.json();
         setData(json);
       } catch (error) {
-        console.log(error);
         setIsFetchError(true);
       } finally {
         setIsFetchLoading(false);

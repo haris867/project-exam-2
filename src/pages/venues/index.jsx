@@ -10,11 +10,12 @@ import {
   MainHeading,
   MainHeadingContainer,
 } from "../../components/commonStyles/headings";
+import { baseUrl } from "../../utils/constants";
 
 export default function Venues() {
   const [open, setOpen] = useState(false);
 
-  const url = "https://api.noroff.dev/api/v1/holidaze/venues";
+  const url = baseUrl + `venues`;
 
   const { data, isLoading, isError } = useGetData(url);
 

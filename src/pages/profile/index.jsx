@@ -10,13 +10,14 @@ import { load } from "../../storage";
 import { LoadingSpinner } from "../../components/commonStyles/loadingSpinner";
 import * as S from "./index.styles";
 import { MainHeading } from "../../components/commonStyles/headings";
+import { baseUrl } from "../../utils/constants";
 
 export default function Profile() {
   const [open, setOpen] = useState(false);
   const [openForm, setOpenForm] = useState(false);
   const loggedInUser = load("user");
 
-  const url = "https://api.noroff.dev/api/v1/holidaze/profiles/";
+  const url = baseUrl + `profiles/`;
 
   let { name } = useParams();
   const { data, isLoading, isError } = useGetData(
@@ -27,8 +28,6 @@ export default function Profile() {
       },
     }
   );
-
-  console.log(data);
 
   if (isLoading) {
     return (
@@ -41,8 +40,6 @@ export default function Profile() {
   if (isError) {
     return <div>An error occured</div>;
   }
-
-  console.log(data.venues);
 
   return (
     <Container className="d-flex flex-column justify-content-center p-0 w-85">
