@@ -11,6 +11,7 @@ import {
   MainHeadingContainer,
 } from "../../components/commonStyles/headings";
 import { baseUrl } from "../../utils/constants";
+import { Helmet } from "react-helmet";
 
 export default function Venues() {
   const [open, setOpen] = useState(false);
@@ -45,6 +46,9 @@ export default function Venues() {
           className="cursor-pointer primary-color fs-2"
         />
       </MainHeadingContainer>
+      <Helmet>
+        <title>Holidaze | Venues</title>
+      </Helmet>
       <Container className="d-flex justify-content-center mt-3 p-0 w-85">
         <Col
           xs={12}

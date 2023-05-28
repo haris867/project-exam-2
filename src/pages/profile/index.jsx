@@ -11,6 +11,7 @@ import { LoadingSpinner } from "../../components/commonStyles/loadingSpinner";
 import * as S from "./index.styles";
 import { MainHeading } from "../../components/commonStyles/headings";
 import { baseUrl } from "../../utils/constants";
+import { Helmet } from "react-helmet";
 
 export default function Profile() {
   const [open, setOpen] = useState(false);
@@ -43,6 +44,9 @@ export default function Profile() {
 
   return (
     <Container className="d-flex flex-column justify-content-center p-0 w-85">
+      <Helmet>
+        <title>{name ? `Holidaze | ${name}` : "Holidaze"}</title>
+      </Helmet>
       <Row className="d-flex align-self-center justify-content-center w-100">
         <Col xs={12} sm={11} md={8} lg={7}>
           <Col className="d-flex align-items-center mb-2 mx-auto w-100">

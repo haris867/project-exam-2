@@ -4,6 +4,7 @@ import {
   MainHeading,
   MainHeadingContainer,
 } from "../../components/commonStyles/headings";
+import { Helmet } from "react-helmet";
 import * as S from "../../components/commonStyles/cards";
 
 export default function About() {
@@ -12,6 +13,9 @@ export default function About() {
       <MainHeadingContainer>
         <MainHeading>About Us</MainHeading>
       </MainHeadingContainer>
+      <Helmet>
+        <title>Holidaze | About</title>
+      </Helmet>
       <Container className="d-flex justify-content-center p-0 w-85">
         <Col xs={12} className="d-flex justify-content-center">
           <Row className="d-flex justify-content-center w-100">

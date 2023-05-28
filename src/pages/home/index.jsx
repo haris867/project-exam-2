@@ -8,14 +8,18 @@ import {
   MainHeading,
   MainHeadingContainer,
 } from "../../components/commonStyles/headings";
+import { Helmet } from "react-helmet";
 
 export default function Home() {
   const isLoggedIn = load("user");
   return (
     <div>
       <MainHeadingContainer>
-        <MainHeading className="mb-0">Find a place to stay.</MainHeading>{" "}
+        <MainHeading className="mb-0">Find a place to stay.</MainHeading>
         <S.HomeSubHeading>For your next adventure.</S.HomeSubHeading>
+        <Helmet>
+          <title>Holidaze | Home</title>
+        </Helmet>
       </MainHeadingContainer>
       <Container className="d-flex justify-content-center p-0 w-85">
         <Col xs={12} className="d-flex justify-content-center">
