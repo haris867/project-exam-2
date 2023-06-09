@@ -10,6 +10,8 @@ This site was created using React, SCSS & Bootstrap.
 
 Designed and developed by me. Responsive and WCAG-compliant.
 
+Allows you to register a user profile and create venues that other users can create bookings on.
+
 ## Built With
 
 You can list a the tech stack that you've used over here
